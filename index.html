@@ -1,0 +1,2448 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18127184057"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-18127184057');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotel Pineta | Luxury Landing Bellaria Igea Marina</title>
+    <meta
+      name="description"
+      content="Landing page premium per Hotel Pineta a Bellaria Igea Marina: fronte mare, piscina scenografica riscaldata con idromassaggio, camere raffinate e richiesta preventivo completa."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Hotel Pineta | Luxury Escape sul Mare" />
+    <meta
+      property="og:description"
+      content="Un soggiorno di charme fronte mare con piscina, cucina romagnola e camere eleganti ispirate allo stile del sito ufficiale."
+    />
+    <meta
+      property="og:image"
+      content="immagine/h-pineta-frente.jpg"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <style>
+      :root {
+        --bg: #f4efe8;
+        --paper: #fbf8f3;
+        --paper-soft: #f8f2eb;
+        --white: #ffffff;
+        --text: #29231e;
+        --muted: #74685c;
+        --muted-2: #9a8d82;
+        --dark: #171210;
+        --night: #120f10;
+        --rose: #b87072;
+        --rose-deep: #9e5d5f;
+        --gold: #d3b07a;
+        --gold-deep: #b58b57;
+        --aqua: #7fb8bf;
+        --line: rgba(32, 25, 19, 0.08);
+        --shadow-xl: 0 30px 80px rgba(25, 18, 14, 0.16);
+        --shadow-lg: 0 20px 48px rgba(25, 18, 14, 0.12);
+        --shadow-md: 0 12px 26px rgba(25, 18, 14, 0.08);
+        --radius-xl: 36px;
+        --radius-lg: 26px;
+        --radius-md: 18px;
+        --container: min(1220px, calc(100vw - 32px));
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font-family: "Inter", Arial, sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(184, 112, 114, 0.12), transparent 26%),
+          radial-gradient(circle at top right, rgba(127, 184, 191, 0.1), transparent 24%),
+          linear-gradient(180deg, #f7f1eb 0%, #f6f0e8 35%, #f2ebe3 100%);
+      }
+
+      img { display: block; max-width: 100%; }
+      a { color: inherit; text-decoration: none; }
+      .page-shell { position: relative; overflow: hidden; }
+      .container { width: var(--container); margin: 0 auto; position: relative; z-index: 2; }
+      #top { display: flex; flex-direction: column; }
+      #top > .hero { order: 1; }
+      #top > .section-intro { order: 2; }
+      #top > .section-rooms { order: 3; }
+      #top > .section-kitchen { order: 4; }
+      #top > .section-gallery { order: 5; }
+      #top > .section-features { order: 6; }
+      #top > #contatto { order: 7; }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        backdrop-filter: blur(16px);
+        background: rgba(251, 248, 243, 0.72);
+        border-bottom: 1px solid rgba(23, 18, 16, 0.06);
+      }
+
+      .topbar-inner {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 18px;
+        padding: 14px 0;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .brand:hover {
+        opacity: 0.92;
+      }
+
+      .brand-mark {
+        width: 74px;
+        height: 74px;
+        border-radius: 8px;
+        background: rgba(255,255,255,0.9);
+        box-shadow: 0 4px 12px rgba(25, 18, 14, 0.06);
+        padding: 10px;
+        display: grid;
+        place-items: center;
+      }
+
+      .brand-mark img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .brand-copy small {
+        display: block;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: var(--rose-deep);
+        font-size: 0.72rem;
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+
+      .brand-copy strong {
+        display: block;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.7rem;
+        line-height: 0.9;
+        color: var(--dark);
+      }
+
+      .brand-copy span {
+        display: block;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .top-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border: none;
+        border-radius: 999px;
+        padding: 15px 24px;
+        cursor: pointer;
+        font: inherit;
+        font-weight: 700;
+        transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease, border-color 180ms ease;
+      }
+
+      .btn:hover { transform: translateY(-2px); }
+
+      .btn-primary {
+        color: #fff;
+        background: #9A5B5B;
+        box-shadow: 0 14px 30px rgba(154, 91, 91, 0.32);
+      }
+
+      .btn-secondary {
+        background: rgba(255,255,255,0.86);
+        color: var(--dark);
+        border: 1px solid rgba(23,18,16,0.08);
+        box-shadow: var(--shadow-md);
+      }
+
+      .btn-whatsapp {
+        background: #1ED121;
+        color: #fff;
+        box-shadow: 0 14px 28px rgba(30, 209, 33, 0.28);
+      }
+
+      .hero {
+        position: relative;
+        min-height: 100svh;
+        padding: 60px 0 80px;
+        isolation: isolate;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .hero-media {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+      }
+
+      .hero-media::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(110deg, rgba(22, 19, 18, 0.46) 10%, rgba(22, 19, 18, 0.16) 46%, rgba(22, 19, 18, 0.42) 100%),
+          linear-gradient(180deg, rgba(255,255,255,0.34) 0%, rgba(16,12,12,0.24) 100%);
+        z-index: 1;
+      }
+
+      .hero-media::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(circle at 76% 22%, rgba(255,255,255,0.36), transparent 24%),
+          radial-gradient(circle at 78% 24%, rgba(127,184,191,0.20), transparent 18%);
+        z-index: 2;
+      }
+
+      .hero-bg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: saturate(1.10) contrast(1.14) brightness(1.14);
+      }
+
+      .hero-grid {
+        position: relative;
+        z-index: 3;
+        min-height: auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+        align-items: start;
+        padding-top: 24px;
+        padding-bottom: 72px;
+      }
+
+      .hero-grid::after {
+        display: none;
+      }
+
+      .hero-copy {
+        color: #fff;
+        padding: 0;
+        text-align: left;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 360px;
+        gap: 28px;
+        align-items: start;
+      }
+
+      .hero-side {
+        display: grid;
+        gap: 14px;
+        justify-items: end;
+      }
+
+      .hero-card-intro {
+        width: min(100%, 480px);
+        margin: 0;
+        color: rgba(255,255,255,0.9);
+        line-height: 1.72;
+        font-size: 1rem;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        border-radius: 999px;
+        padding: 10px 18px;
+        border: 1px solid rgba(192,162,161,0.45);
+        background: rgba(192,162,161,0.20);
+        backdrop-filter: blur(12px);
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        font-size: 0.75rem;
+        font-weight: 800;
+        margin-bottom: 16px;
+        color: #E9E3DB;
+      }
+
+      .hero-side .eyebrow {
+        margin-top: 0;
+      }
+
+      .hero h1 {
+        margin: 0 0 24px;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(3rem, 5vw, 5.2rem);
+        line-height: 0.85;
+        letter-spacing: -0.06em;
+        font-weight: 600;
+        max-width: 560px;
+      }
+
+      .hero h1 span { color: #f2d8b0; }
+
+      .hero-lead {
+        max-width: 100%;
+        margin: 0 0 24px;
+        font-size: 1rem;
+        line-height: 1.7;
+        color: rgba(255,255,255,0.88);
+      }
+
+      .hero-pillars {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 16px;
+        margin: 0;
+        align-items: flex-start;
+        max-width: 360px;
+        justify-self: end;
+      }
+
+      .hero-pillars .chip {
+        padding: 22px 24px;
+        border-radius: 24px;
+        background: rgba(255,255,255,0.15);
+        border: 1px solid rgba(255,255,255,0.22);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 14px 32px rgba(16, 12, 12, 0.18);
+        font-size: 0.94rem;
+        min-height: 128px;
+        width: 100%;
+        text-align: left;
+        display: grid;
+        align-content: center;
+        gap: 8px;
+      }
+
+      .hero-pillars strong {
+        display: block;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.42rem;
+        line-height: 1;
+        margin-bottom: 4px;
+      }
+
+      .hero-pillars span {
+        color: rgba(255,255,255,0.9);
+        line-height: 1.72;
+      }
+
+      .hero-note span { color: rgba(255,255,255,0.82); }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 0;
+        margin-top: 24px;
+      }
+
+      .hero-note {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: 12px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-top: 0;
+        padding: 10px 16px;
+        border-radius: 999px;
+        border: 1px solid rgba(255,255,255,0.2);
+        background: rgba(22, 19, 18, 0.28);
+        backdrop-filter: blur(8px);
+      }
+
+      .hero-note span {
+        flex: 1;
+        text-align: center;
+        white-space: nowrap;
+      }
+
+      .hero-note span::before {
+        content: "";
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        margin-right: 8px;
+        border-radius: 50%;
+        background: var(--gold);
+        vertical-align: middle;
+      }
+
+      .hero-card {
+        align-self: auto;
+        justify-self: end;
+        width: min(100%, 480px);
+        border-radius: 32px;
+        padding: 32px;
+        background: rgba(253, 248, 241, 0.80);
+        backdrop-filter: blur(18px);
+        box-shadow: 0 40px 90px rgba(20, 15, 10, 0.22), inset 1px 1px 0 rgba(255,255,255,0.4);
+        border: 1px solid rgba(255,255,255,0.35);
+      }
+
+      .hero-card small,
+      .mini-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        font-size: 0.72rem;
+        font-weight: 800;
+        color: var(--rose-deep);
+      }
+
+      .hero-card h2,
+      .section-head h2,
+      .section-card h3,
+      .contact-card h2,
+      .story-copy h3,
+      .luxury-banner h3,
+      .feature-card h3,
+      .offer-card h3,
+      .room-card h3,
+      .testimonial-card h3,
+      .contact-aside h3 {
+        margin: 10px 0 10px;
+        font-family: "Cormorant Garamond", serif;
+        color: var(--dark);
+        line-height: 0.94;
+        letter-spacing: -0.03em;
+      }
+
+      .hero-card h2 { font-size: clamp(1.6rem, 2.8vw, 2.4rem); }
+      .hero-card p { margin: 0; color: var(--muted); line-height: 1.75; }
+      .hero-price {
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+        margin: 18px 0 18px;
+      }
+      .hero-price strong {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 3.4rem;
+        line-height: 1;
+        color: var(--rose-deep);
+      }
+      .hero-price span { color: var(--muted); }
+
+      .section { 
+        padding: 64px 0;
+        position: relative;
+      }
+
+      .section:not(:last-of-type)::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: min(200px, 30vw);
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(23,18,16,0.06), transparent);
+      }
+      .section-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 24px;
+        margin-bottom: 24px;
+      }
+      .section-head h2 {
+        font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+        margin-bottom: 14px;
+      }
+      .section-head p {
+        margin: 0;
+        max-width: 760px;
+        color: var(--muted);
+        line-height: 1.75;
+        font-size: 1.03rem;
+      }
+
+      .single-line-text {
+        white-space: normal;
+        width: 100%;
+        max-width: none;
+        overflow-wrap: break-word;
+        word-break: normal;
+        text-wrap: pretty;
+      }
+
+      .luxury-banner {
+        position: relative;
+        padding: 34px;
+        border-radius: 34px;
+        overflow: hidden;
+        background:
+          linear-gradient(120deg, rgba(22,16,16,0.92) 0%, rgba(46,34,34,0.8) 46%, rgba(111,82,83,0.58) 100%),
+          url("immagine/piscina2.webp") center/cover no-repeat;
+        box-shadow: var(--shadow-xl);
+        color: #fff;
+      }
+
+      .luxury-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) 320px;
+        gap: 22px;
+        align-items: center;
+      }
+
+      .luxury-banner h3 { font-size: clamp(2.2rem, 3.5vw, 3.3rem); color: #fff; }
+      .luxury-banner p {
+        margin: 0;
+        color: rgba(255,255,255,0.88);
+        line-height: 1.78;
+      }
+
+      .luxury-points {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 28px;
+      }
+
+      .luxury-item,
+      .feature-card,
+      .room-card,
+      .testimonial-card,
+      .story-panel,
+      .contact-card,
+      .contact-aside,
+      .offer-card,
+      .gallery-card,
+      .signature-card {
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .luxury-item {
+        padding: 18px;
+        background: rgba(255,255,255,0.11);
+        border: 1px solid rgba(255,255,255,0.16);
+      }
+
+      .luxury-item strong,
+      .feature-card strong,
+      .room-specs strong,
+      .visual-label strong,
+      .offer-card strong {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 1rem;
+        font-weight: 800;
+      }
+
+      .luxury-item span,
+      .offer-card span,
+      .visual-label span,
+      .contact-info a span {
+        display: block;
+        font-size: 0.93rem;
+        line-height: 1.58;
+      }
+
+      .signature-card {
+        padding: 26px;
+        background: rgba(255,255,255,0.94);
+        color: var(--text);
+      }
+
+      .signature-card strong {
+        display: block;
+        font-family: "Cormorant Garamond", serif;
+        color: var(--dark);
+        font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+        line-height: 0.92;
+        margin: 8px 0;
+      }
+
+      .signature-card p { margin: 0 0 16px; color: var(--muted); line-height: 1.7; }
+
+      .visual-grid {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 18px;
+      }
+
+      .visual-card,
+      .gallery-card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 30px;
+        min-height: 280px;
+      }
+
+      .visual-card.tall { min-height: 610px; }
+
+      .visual-card img,
+      .gallery-card img,
+      .story-panel img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 1.2s ease;
+      }
+
+      .visual-card:hover img,
+      .gallery-card:hover img,
+      .story-panel:hover img { transform: scale(1.05); }
+
+      .visual-card::after,
+      .gallery-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(17,13,13,0.02) 20%, rgba(17,13,13,0.66) 100%);
+      }
+
+      .visual-label {
+        position: absolute;
+        left: 18px;
+        right: 18px;
+        bottom: 16px;
+        z-index: 2;
+        color: #fff;
+      }
+
+        .gallery-video-link {
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(135deg, rgba(184,132,57,0.15) 0%, rgba(127,184,191,0.15) 100%);
+          border-radius: var(--radius-lg);
+          text-decoration: none;
+          color: #fff;
+          overflow: hidden;
+        }
+
+        .gallery-video-link::before {
+          content: "";
+          position: absolute;
+          width: 80px;
+          height: 80px;
+          background: rgba(211, 176, 122, 0.9);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 2;
+          transition: transform 0.3s ease;
+        }
+
+        .gallery-video-link::after {
+          content: "▶";
+          position: absolute;
+          font-size: 36px;
+          color: #fff;
+          z-index: 3;
+          transition: transform 0.3s ease;
+        }
+
+        .gallery-video-link:hover::before {
+          transform: scale(1.15);
+        }
+
+        .gallery-video-text {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          padding: 20px;
+          background: linear-gradient(180deg, transparent 0%, rgba(17,13,13,0.8) 100%);
+          color: #fff;
+          text-align: center;
+          font-weight: 600;
+          font-size: 1rem;
+          line-height: 1.5;
+        }
+
+      .visual-label .btn {
+        margin-top: 12px;
+        width: fit-content;
+      }
+
+      .visual-label strong {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.9rem;
+        line-height: 0.95;
+      }
+
+      .visual-stack { display: grid; gap: 18px; }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+      }
+
+      .feature-card {
+        padding: 36px;
+        background: rgba(255,255,255,0.6);
+        border: 1px solid rgba(23,18,16,0.04);
+        backdrop-filter: blur(8px);
+      }
+
+      .feature-icon {
+        width: 64px;
+        height: 64px;
+        display: grid;
+        place-items: center;
+        border-radius: 16px;
+        margin-bottom: 22px;
+        background: linear-gradient(135deg, rgba(184,112,114,0.08), rgba(127,184,191,0.08));
+        color: var(--rose-deep);
+        font-weight: 700;
+        font-size: 1.8rem;
+      }
+
+      .feature-card h3 { font-size: 1.48rem; }
+      .feature-card p { margin: 0; color: var(--muted); line-height: 1.72; }
+
+      .rooms-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+        align-items: start;
+      }
+
+      .room-card {
+        overflow: hidden;
+        background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(250,245,239,0.98));
+        border: 1px solid rgba(23,18,16,0.06);
+      }
+
+      .room-media {
+        position: relative;
+        height: 230px;
+      }
+
+      .room-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .room-media::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(20,14,14,0) 28%, rgba(20,14,14,0.24) 100%);
+      }
+
+      .room-copy { padding: 20px; }
+      .room-card h3 { font-size: 2rem; }
+      .room-card p { margin: 0 0 16px; color: var(--muted); line-height: 1.68; }
+      .room-specs {
+        display: grid;
+        gap: 10px;
+        color: var(--text);
+      }
+      .room-specs div {
+        padding-top: 10px;
+        border-top: 1px solid rgba(23,18,16,0.08);
+        font-size: 0.93rem;
+      }
+
+      .story-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.24fr) minmax(320px, 0.76fr);
+        gap: 22px;
+      }
+
+      .story-panel { overflow: hidden; min-height: 100%; }
+      .story-panel--kitchen {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(248,242,234,0.96));
+        min-height: clamp(320px, 42vw, 520px);
+      }
+      .story-panel--kitchen img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        transform: scale(1.02);
+        transform-origin: center;
+        transition: transform 0.9s ease;
+      }
+      .story-panel--kitchen:hover img {
+        transform: translate3d(1.5%, -1%, 0) scale(1.07);
+      }
+      .story-copy { padding: 30px; background: rgba(255,255,255,0.86); border: 1px solid rgba(23,18,16,0.06); border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); }
+      .story-copy h3 { font-size: clamp(1.6rem, 2.8vw, 2.4rem); }
+      .story-copy p { margin: 0 0 18px; color: var(--muted); line-height: 1.78; }
+
+      .check-list { display: grid; gap: 12px; }
+      .check-item {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        line-height: 1.66;
+      }
+      .check-item::before {
+        content: "+";
+        flex: 0 0 auto;
+        width: 28px;
+        height: 28px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: rgba(184,112,114,0.14);
+        color: var(--rose-deep);
+        font-weight: 800;
+      }
+
+      .offer-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 330px;
+        gap: 22px;
+      }
+
+      .offer-card {
+        padding: 30px;
+        background:
+          linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(249,243,236,0.92) 100%),
+          url("immagine/sala-h-pineta.jpg") center/cover no-repeat;
+        border: 1px solid rgba(23,18,16,0.06);
+      }
+
+      .offer-card h3 { font-size: clamp(1.6rem, 2.8vw, 2.4rem); }
+      .offer-card p { margin: 0; color: var(--muted); line-height: 1.78; }
+
+      .offer-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 20px;
+      }
+
+      .offer-box {
+        padding: 18px;
+        border-radius: 20px;
+        background: rgba(255,255,255,0.8);
+        border: 1px solid rgba(23,18,16,0.06);
+      }
+
+      .offer-box strong { color: var(--dark); }
+      .offer-box span { color: var(--muted); }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        auto-rows: 240px;
+      }
+
+      .gallery-grid-extra {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 18px;
+      }
+
+      .gallery-card:nth-child(1) { grid-column: 1; }
+      .gallery-card:nth-child(2) { grid-column: 2 / 4; }
+      .gallery-card:nth-child(3) { grid-column: 1 / 3; }
+      .gallery-card:nth-child(4) { grid-column: 3; }
+      .gallery-card:nth-child(5) { grid-column: 1 / 3; }
+      .gallery-card:nth-child(6) { grid-column: 3; }
+      .gallery-card:nth-child(7) { grid-column: 1 / 4; }
+
+      .gallery-card { 
+        min-height: auto;
+        height: 100%;
+      }
+
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .testimonial-card {
+        padding: 36px;
+        background: rgba(255,255,255,0.75);
+        border: 1px solid rgba(23,18,16,0.04);
+      }
+
+      .testimonial-card h3 {
+        font-size: 1.8rem;
+        color: var(--rose-deep);
+      }
+
+      .testimonial-card p {
+        margin: 0 0 16px;
+        color: var(--muted);
+        line-height: 1.75;
+      }
+
+      .testimonial-card footer {
+        color: var(--dark);
+        font-weight: 700;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 330px;
+        gap: 22px;
+      }
+
+      .contact-card,
+      .contact-aside {
+        padding: 30px;
+        background: rgba(255,255,255,0.9);
+        border: 1px solid rgba(23,18,16,0.06);
+      }
+
+      .contact-aside {
+        display: grid;
+        align-content: start;
+        gap: 18px;
+        min-width: 0;
+      }
+
+      .contact-aside > h3 {
+        margin: 0;
+      }
+
+      .contact-card > p,
+      .contact-aside p,
+      .contact-aside li,
+      .disclaimer,
+      .status,
+      .footer-copy,
+      .footer-meta,
+      .privacy-box label,
+      .field label,
+      .form-block-header p {
+        color: var(--muted);
+      }
+
+      .contact-info {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin: 18px 0 20px;
+      }
+
+      .contact-aside .contact-info {
+        grid-template-columns: 1fr;
+        margin-top: 6px;
+        gap: 14px;
+      }
+
+      .contact-aside .testimonial-card {
+        margin: 0;
+        padding: 14px 16px;
+        font-size: 0.88rem;
+      }
+
+      .contact-aside .testimonial-card h3 {
+        font-size: 1.1rem;
+        margin: 0 0 8px;
+      }
+
+      .contact-aside .testimonial-card p {
+        margin: 0 0 10px;
+        line-height: 1.6;
+      }
+
+      .contact-aside .testimonial-card footer {
+        font-size: 0.8rem;
+      }
+
+      .contact-info a {
+        display: grid;
+        gap: 4px;
+        padding: 14px 16px;
+        border-radius: 16px;
+        background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(248,242,234,0.98));
+        border: 1px solid rgba(23,18,16,0.08);
+        font-size: 0.87rem;
+      }
+
+      .contact-info a span {
+        font-size: 0.72rem;
+        letter-spacing: 0.02em;
+        word-break: break-word;
+      }
+
+      .contact-info a span:first-child {
+        color: var(--rose-deep);
+        font-weight: 800;
+      }
+
+      .lead-form,
+      .form-grid,
+      .room-list,
+      .form-block,
+      .form-block-header,
+      .field,
+      .field-full,
+      .footer-grid,
+      .footer-brand,
+      .footer-col,
+      .room-card-dynamic,
+      .child-age-list {
+        display: grid;
+        gap: 14px;
+      }
+
+      .lead-form { gap: 16px; }
+
+      .form-block {
+        padding: 22px;
+        border-radius: 24px;
+        border: 1px solid rgba(23,18,16,0.07);
+        background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(248,242,234,0.96));
+        box-shadow: var(--shadow-md);
+      }
+
+      .form-block-header h3 {
+        margin: 0;
+        font-size: 1.1rem;
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        letter-spacing: 0;
+      }
+
+      .request-type,
+      .form-grid--double,
+      .form-grid--triple,
+      .guest-grid {
+        display: grid;
+        gap: 12px;
+      }
+
+      .request-type { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .form-grid--double { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .form-grid--triple, .guest-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .field-full { grid-column: 1 / -1; }
+
+      .radio-card { position: relative; }
+      .radio-card input { position: absolute; opacity: 0; pointer-events: none; }
+      .radio-card span {
+        display: block;
+        padding: 16px;
+        border-radius: 16px;
+        border: 1px solid rgba(23,18,16,0.08);
+        background: rgba(255,255,255,0.96);
+        color: var(--text);
+        font-weight: 700;
+        transition: all 180ms ease;
+      }
+      .radio-card input:checked + span {
+        border-color: rgba(184,112,114,0.5);
+        background: linear-gradient(180deg, rgba(249,237,237,1), rgba(245,227,227,1));
+        box-shadow: 0 0 0 4px rgba(184,112,114,0.1);
+        color: var(--rose-deep);
+      }
+
+      label {
+        font-size: 0.94rem;
+        font-weight: 700;
+        color: var(--text);
+      }
+
+      .label-soft {
+        font-weight: 400;
+      }
+
+      .privacy-box label {
+        font-weight: 400;
+      }
+
+      input, select, textarea {
+        width: 100%;
+        border: none;
+        padding: 14px 16px;
+        background: transparent;
+        color: var(--text);
+        font: inherit;
+      }
+
+      textarea { min-height: 150px; resize: vertical; }
+      select { cursor: pointer; }
+      input:focus, select:focus, textarea:focus { outline: none; }
+
+      .app-input,
+      .app-select,
+      .app-date,
+      .child-age-card,
+      .room-card-dynamic {
+        position: relative;
+        border: 1px solid #e8ddd3;
+        border-radius: 15px;
+        background: #fff;
+        transition: border-color 180ms ease, box-shadow 180ms ease;
+      }
+
+      .app-input:focus-within,
+      .app-select:focus-within,
+      .app-date:focus-within,
+      .child-age-card:focus-within,
+      .room-card-dynamic:focus-within {
+        border-color: rgba(184,112,114,0.48);
+        box-shadow: 0 0 0 4px rgba(184,112,114,0.09);
+      }
+
+      .app-select select,
+      .child-age-card select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        padding-right: 44px;
+      }
+
+      .app-date input { padding-right: 44px; cursor: pointer; }
+
+      .app-select::after,
+      .app-date::after,
+      .child-age-card::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 14px;
+        transform: translateY(-50%);
+        width: 18px;
+        height: 18px;
+        pointer-events: none;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 18px 18px;
+        opacity: 0.65;
+      }
+
+      .app-select::after,
+      .child-age-card::after {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23a05e60' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+      }
+
+      .app-date::after {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23a05e60' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'/%3E%3Cline x1='16' y1='2' x2='16' y2='6'/%3E%3Cline x1='8' y1='2' x2='8' y2='6'/%3E%3Cline x1='3' y1='10' x2='21' y2='10'/%3E%3C/svg%3E");
+      }
+
+      .room-card-dynamic { padding: 16px; }
+      .room-card-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 12px;
+      }
+      .room-card-head h4 {
+        margin: 0;
+        color: var(--dark);
+        font-size: 1rem;
+      }
+      .room-card-head span {
+        color: var(--muted);
+        font-size: 0.88rem;
+      }
+
+      .child-age-card label {
+        display: block;
+        padding: 12px 16px 0;
+        color: var(--muted);
+        font-size: 0.84rem;
+      }
+
+      .child-age-card select { padding-top: 6px; }
+
+      .privacy-box {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        padding: 14px 16px;
+        border-radius: 18px;
+        background: rgba(248, 237, 233, 0.9);
+        border: 1px solid rgba(23,18,16,0.06);
+      }
+
+      .privacy-box input {
+        width: 18px;
+        height: 18px;
+        margin-top: 2px;
+        accent-color: var(--rose-deep);
+      }
+
+      .form-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .status {
+        min-height: 24px;
+        font-weight: 700;
+        color: var(--rose-deep);
+      }
+
+      .contact-aside ul {
+        margin: 0;
+        padding-left: 18px;
+        line-height: 1.7;
+      }
+
+      .contact-aside .aside-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-self: start;
+        gap: 8px;
+        padding: 10px 14px;
+        border-radius: 999px;
+        background: rgba(184,112,114,0.1);
+        color: var(--rose-deep);
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        font-size: 0.72rem;
+        font-weight: 800;
+      }
+
+      .footer {
+        margin-top: 24px;
+        padding: 34px 0 44px;
+        background: #171312;
+        color: rgba(255,255,255,0.8);
+      }
+
+      .footer-grid {
+        grid-template-columns: minmax(0, 1.2fr) repeat(3, minmax(0, 0.9fr));
+        gap: 32px;
+        align-items: start;
+      }
+
+      .footer-brand {
+        display: grid;
+        gap: 10px;
+        justify-items: start;
+      }
+
+      .footer-brand-link {
+        display: inline-grid;
+        gap: 10px;
+        color: #fff;
+      }
+
+      .footer-brand-link:hover {
+        color: #fff;
+      }
+
+      .footer-brand strong {
+        color: #fff;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.9rem;
+        line-height: 1;
+      }
+
+      .footer-brand img {
+        width: 120px;
+        height: auto;
+        object-fit: contain;
+        margin-bottom: 10px;
+      }
+
+      .footer-col h4 {
+        margin: 0;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-size: 0.8rem;
+      }
+
+      .footer-col {
+        display: grid;
+        align-content: start;
+        gap: 8px;
+      }
+
+      .footer-col a,
+      .footer-col p {
+        color: rgba(255,255,255,0.7);
+        line-height: 1.7;
+      }
+
+      .footer-col a:hover { color: #fff; }
+
+      .footer-credits {
+        margin-top: 24px;
+        padding-top: 18px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        font-size: 0.83rem;
+        color: rgba(255,255,255,0.62);
+      }
+
+      .footer-bottom {
+        text-align: left;
+      }
+
+      .footer-signature {
+        text-align: right;
+        font-size: 0.74rem;
+        color: rgba(255,255,255,0.44);
+        letter-spacing: 0.01em;
+      }
+
+      .footer-signature a {
+        color: rgba(255,255,255,0.58);
+      }
+
+      .footer-signature a:hover {
+        color: rgba(255,255,255,0.82);
+      }
+      
+
+      .floating-whatsapp {
+        position: fixed;
+        right: 18px;
+        bottom: 18px;
+        z-index: 60;
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: #1ED121;
+        color: #fff;
+        box-shadow: 0 18px 34px rgba(30, 209, 33, 0.32);
+      }
+
+      .floating-whatsapp span { display: none; }
+      .floating-whatsapp svg { width: 30px; height: 30px; fill: currentColor; }
+
+      .flatpickr-calendar {
+        border: 1px solid rgba(23,18,16,0.08);
+        border-radius: 20px;
+        box-shadow: 0 26px 60px rgba(20,15,10,0.16);
+        overflow: hidden;
+        background: #fff;
+      }
+      .flatpickr-day.selected,
+      .flatpickr-day.startRange,
+      .flatpickr-day.endRange {
+        background: linear-gradient(135deg, var(--rose), var(--rose-deep));
+        border-color: var(--rose-deep);
+      }
+      .flatpickr-day.inRange {
+        background: rgba(184,112,114,0.12);
+        border-color: rgba(184,112,114,0.04);
+      }
+      .flatpickr-day.today { border-color: rgba(184,112,114,0.56); }
+
+      @media (max-width: 1080px) {
+        .hero-grid,
+        .luxury-grid,
+        .visual-grid,
+        .story-grid,
+        .offer-layout,
+        .contact-grid,
+        .footer-grid,
+        .contact-info {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-card {
+          width: min(100%, 520px);
+        }
+
+        .feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .rooms-grid,
+        .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .gallery-grid-extra { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .gallery-card:nth-child(1) { grid-column: 1; }
+        .gallery-card:nth-child(2) { grid-column: 2; }
+        .gallery-card:nth-child(3) { grid-column: 1; }
+        .gallery-card:nth-child(4) { grid-column: 2; }
+        .gallery-card:nth-child(5) { grid-column: 1; }
+        .gallery-card:nth-child(6) { grid-column: 2; }
+        .gallery-card:nth-child(7) { grid-column: 1 / 3; }
+        .testimonials-grid { grid-template-columns: 1fr; }
+      }
+
+      @media (max-width: 820px) {
+        .topbar-inner,
+        .section-head {
+          flex-direction: column;
+          align-items: start;
+        }
+
+        .footer-credits {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .footer-signature {
+          text-align: left;
+        }
+
+        .top-actions { width: 100%; justify-content: stretch; }
+        .top-actions .btn { flex: 1 1 220px; }
+
+        .hero-pillars,
+        .luxury-points,
+        .feature-grid,
+        .offer-list,
+        .request-type,
+        .form-grid--double,
+        .form-grid--triple,
+        .guest-grid,
+        .child-age-list,
+        .rooms-grid,
+        .gallery-grid-extra,
+        .gallery-grid,
+        .testimonials-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-grid { 
+          grid-template-columns: 1fr; 
+          gap: 18px;
+          margin-top: 18px;
+          padding-top: 0;
+          padding-bottom: 0;
+        }
+
+        .hero-grid::after {
+          display: none;
+        }
+
+        .hero {
+          min-height: auto;
+          display: block;
+          padding: 0 0 60px;
+        }
+
+        .hero-media {
+          position: relative;
+          inset: auto;
+          height: clamp(360px, 64vh, 560px);
+          overflow: hidden;
+          border-radius: 0 0 34px 34px;
+        }
+
+        .hero-media::before {
+          background:
+            linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(16,12,12,0.10) 100%);
+        }
+
+        .hero-media::after {
+          background:
+            radial-gradient(circle at 72% 20%, rgba(255,255,255,0.24), transparent 22%);
+        }
+
+        .hero-bg {
+          filter: saturate(1.04) contrast(1.04) brightness(1.08);
+        }
+
+        .hero-copy {
+          color: var(--text);
+          padding: 24px;
+          border-radius: 28px;
+          background: rgba(251,248,243,0.96);
+          box-shadow: var(--shadow-lg);
+          display: block;
+        }
+
+        .hero h1 {
+          color: var(--dark);
+          line-height: 0.9;
+        }
+
+        .hero h1 span {
+          color: var(--rose-deep);
+        }
+
+        .hero-pillars {
+          margin: 24px 0 0;
+        }
+
+        .hero-pillars .chip {
+          min-height: 0;
+          padding: 18px 18px;
+          background: rgba(248,242,235,0.96);
+          border: 1px solid rgba(23,18,16,0.08);
+          box-shadow: none;
+        }
+
+        .hero-pillars span {
+          color: var(--muted);
+        }
+
+        .hero-side {
+          justify-items: stretch;
+          gap: 12px;
+        }
+
+        .hero-side .eyebrow {
+          color: var(--rose-deep);
+          background: rgba(184,112,114,0.08);
+          border-color: rgba(184,112,114,0.2);
+        }
+
+        .hero-card-intro {
+          width: 100%;
+          color: var(--muted);
+          padding: 20px;
+          border-radius: 24px;
+          background: rgba(251,248,243,0.94);
+          box-shadow: var(--shadow-md);
+        }
+
+        .hero-card {
+          width: 100%;
+          justify-self: stretch;
+        }
+
+        .hero-note {
+          position: static;
+          margin-top: 8px;
+          flex-wrap: wrap;
+          border-radius: 20px;
+          background: rgba(251,248,243,0.94);
+          border: 1px solid rgba(23,18,16,0.08);
+          backdrop-filter: none;
+        }
+
+        .hero-note span {
+          flex: 0 0 auto;
+          text-align: left;
+          white-space: normal;
+          color: var(--text);
+        }
+
+        .hero-note span::before {
+          background: var(--rose-deep);
+        }
+      }
+
+      @media (max-width: 560px) {
+        .container { width: min(100vw - 20px, 1200px); }
+        .brand-mark { width: 62px; height: 62px; border-radius: 6px; }
+        .hero h1 { font-size: 2.45rem; }
+        .btn, .floating-whatsapp { width: 100%; }
+        .hero-actions, .form-actions { flex-direction: column; }
+        .luxury-banner,
+        .contact-card,
+        .contact-aside,
+        .offer-card,
+        .story-copy,
+        .form-block {
+          padding: 22px;
+        }
+        .floating-whatsapp {
+          width: 58px;
+          height: 58px;
+          right: 14px;
+          bottom: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="container topbar-inner">
+          <a class="brand" href="https://www.h-pineta.com/" target="_blank" rel="noopener noreferrer" aria-label="Vai al sito ufficiale Hotel Pineta">
+            <div class="brand-mark">
+              <img
+                src="immagine/logo-hotel-pineta-rosso.png"
+                alt="Logo Hotel Pineta"
+              />
+            </div>
+            <div class="brand-copy">
+              <small>Bellaria Igea Marina</small>
+              <strong>Hotel Pineta</strong>
+              <span>Luxury seaside landing experience</span>
+            </div>
+          </a>
+        </div>
+      </header>
+
+      <main id="top">
+        <section class="hero">
+          <div class="hero-media" aria-hidden="true">
+            <img
+              class="hero-bg"
+              src="immagine/piscina2.webp"
+              alt=""
+            />
+          </div>
+
+          <div class="container hero-grid">
+            <div class="hero-copy">
+              <h1>
+                Il fascino del mare, <br />
+                <span>con un’anima più esclusiva</span>
+              </h1>
+
+              <div class="hero-pillars">
+                <div class="chip">
+                  <strong>Piscina iconica</strong>
+                  <span>riscaldata, con otto postazioni idromassaggio, geyser e lama cervicale</span>
+                </div>
+                <div class="chip">
+                  <strong>Camere d’atmosfera</strong>
+                  <span>Comfort, Superior e Suite con stile retrò e dettagli romantici</span>
+                </div>
+                <div class="chip">
+                  <strong>Fronte mare vero</strong>
+                  <span>spiaggia davanti, solarium, giardino e ritmo rilassato senza pensieri</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section-intro">
+          <div class="container">
+            <div class="section-head">
+              <div>
+                <h2>L'Hotel Pineta: dove il mare incontra il benessere</h2>
+                <p class="single-line-text">
+                  All’Hotel Pineta tutto parla di benessere: piscina riscaldata con idromassaggio, fronte mare,
+                  ambienti raffinati e la calda ospitalità della famiglia Berardi dal 1950.
+                </p>
+              </div>
+            </div>
+
+            <div class="visual-grid">
+              <article class="visual-card tall">
+                <img src="immagine/h-pineta-entrata.webp" alt="Ingresso Hotel Pineta Bellaria Igea Marina" loading="lazy" />
+                <div class="visual-label">
+                  <strong>Un arrivo che introduce subito il tono del soggiorno</strong>
+                  <span>accoglienza, eleganza e identità visiva coerente dal primo impatto</span>
+                  <a class="btn btn-primary" href="#contatto">Ricevi proposta personalizzata</a>
+                </div>
+              </article>
+
+              <div class="visual-stack">
+                <article class="visual-card">
+                  <img src="immagine/terrazo-h-pineta.avif" alt="Esterno Hotel Pineta fronte mare" loading="lazy" />
+                  <div class="visual-label">
+                    <strong>Fronte mare autentico</strong>
+                    <span>una posizione che rende tutto più semplice, desiderabile e immediato</span>
+                  </div>
+                </article>
+                <article class="visual-card">
+                  <img src="immagine/Camera.jpeg" alt="Dettagli di camera Hotel Pineta" loading="lazy" />
+                  <div class="visual-label">
+                    <strong>Luce morbida e dettagli che fanno venire voglia di restare</strong>
+                    <span>una camera che trasmette calma, bellezza e sensazione di vacanza fin dal primo sguardo</span>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section-features">
+          <div class="container">
+            <div class="section-head">
+              <div>
+                <h2>Perché scegliere Hotel Pineta per le tue vacanze</h2>
+                <p>
+                  Non è solo una questione di posizione: è la somma di ogni dettaglio curato. La vista mare,
+                  la piscina, la cucina romagnola e l'ospitalità genuina della famiglia Berardi rendono ogni
+                  soggiorno al Pineta un'esperienza difficile da dimenticare.
+                </p>
+              </div>
+            </div>
+
+            <div class="feature-grid">
+              <article class="feature-card">
+                <div class="feature-icon">01</div>
+                <h3>Piscina riscaldata wow</h3>
+                <p>
+                  La pagina ufficiale parla di piscina grande e invitante con otto postazioni idromassaggio,
+                  geyser e lama cervicale: qui la trasformiamo in leva premium centrale.
+                </p>
+              </article>
+
+              <article class="feature-card">
+                <div class="feature-icon">02</div>
+                <h3>Cucina che completa il soggiorno</h3>
+                <p>
+                  Colazione fronte mare, dolce e salata, più piatti tipici romagnoli, pasta fatta in casa,
+                  carne a km zero e pesce fresco: una narrazione molto più ricca e invitante.
+                </p>
+              </article>
+
+              <article class="feature-card">
+                <div class="feature-icon">03</div>
+                <h3>Camere con carattere</h3>
+                <p>
+                  Non solo camere: Comfort, Superior e Suite diventano una progressione di stile,
+                  comfort e desiderio, con balcone, climatizzazione e vista mare su richiesta o inclusa.
+                </p>
+              </article>
+
+              <article class="feature-card">
+                <div class="feature-icon">04</div>
+                <h3>Posizione davvero forte</h3>
+                <p>
+                  Lungomare e spiaggia di fronte, solarium e giardino: il Pineta ha tutto per sembrare un
+                  hotel più esclusivo se raccontato con il tono giusto.
+                </p>
+              </article>
+
+              <article class="feature-card">
+                <div class="feature-icon">05</div>
+                <h3>Servizi utili, ben presentati</h3>
+                <p>
+                  Parcheggio privato, citybike gratuite, wi-fi, climatizzazione e anche accoglienza per piccoli
+                  animali: utilità concreta, ma mostrata in modo più elegante.
+                </p>
+              </article>
+
+              <article class="feature-card">
+                <div class="feature-icon">06</div>
+                <h3>Lead molto più qualificati</h3>
+                <p>
+                  Conserviamo il tuo form completo e dinamico, così il contatto arriva già strutturato,
+                  con camere, bambini, età, trattamento e preferenze chiare.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section-rooms">
+          <div class="container">
+            <div class="section-head">
+              <div>
+                <h2>Camere e suite: tre modi di sentirsi bene</h2>
+                <p class="single-line-text">
+                  Al Pineta il sito ufficiale le racconta così: Comfort, Superior e Suite. In questa landing
+                  diventano una gamma elegante, con una percezione molto più alta e più raffinata.
+                </p>
+              </div>
+            </div>
+
+            <div class="rooms-grid">
+              <article class="room-card">
+                <div class="room-media">
+                  <img src="immagine/Suite.jpeg" alt="Suite Hotel Pineta con vista mare" loading="lazy" />
+                </div>
+                <div class="room-copy">
+                  <h3>Suite</h3>
+                  <p>La categoria più ricca: vista mare assicurata, due ambienti, metratura ampia e massimo comfort per un soggiorno di livello.</p>
+                  <div class="room-specs">
+                    <div><strong>Include</strong> balcone fronte mare, TV 42", frigobar, box doccia, climatizzazione</div>
+                    <div><strong>Plus</strong> 36 mq e divisione in 2 ambienti</div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="room-card">
+                <div class="room-media">
+                  <img src="immagine/Superior.jpeg" alt="Camera Superior Hotel Pineta" loading="lazy" />
+                </div>
+                <div class="room-copy">
+                  <h3>Superior</h3>
+                  <p>Luminosa, curata e più contemporanea, ideale per chi desidera qualcosa in più senza arrivare alla suite.</p>
+                  <div class="room-specs">
+                    <div><strong>Include</strong> balcone ampio, frigobar, climatizzazione, box doccia, wi-fi</div>
+                    <div><strong>Atmosfera</strong> sonni morbidi e visual più premium</div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="room-card">
+                <div class="room-media">
+                  <img src="immagine/Confort.jpeg" alt="Camera Comfort Hotel Pineta" loading="lazy" />
+                </div>
+                <div class="room-copy">
+                  <h3>Comfort</h3>
+                  <p>La scelta equilibrata per una vacanza comoda e luminosa, con balcone ampio e bagno privato con box doccia.</p>
+                  <div class="room-specs">
+                    <div><strong>Include</strong> balcone, box doccia, asciugacapelli, climatizzazione, TV 32", wi-fi</div>
+                    <div><strong>Vista</strong> mare su richiesta</div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section-kitchen">
+          <div class="container story-grid">
+            <article class="story-panel story-panel--kitchen">
+              <img src="immagine/Sala.jpg" alt="Ristorante Hotel Pineta" loading="lazy" />
+            </article>
+
+            <article class="story-copy">
+              <h3>La cucina romagnola diventa parte del racconto</h3>
+              <div class="check-list">
+                <div class="check-item">Una cucina che aggiunge valore emozionale al soggiorno.</div>
+                <div class="check-item">Una colazione che si può vendere come rituale di benessere sul mare.</div>
+                <div class="check-item">Piatti tipici e identità territoriale forti, perfetti per campagne premium.</div>
+                <div class="check-item">Un’esperienza completa, non solo una camera vicino alla spiaggia.</div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section section-gallery">
+          <div class="container">
+            <div class="section-head">
+              <div>
+                <h2>Galleria d’atmosfera</h2>
+                <p class="single-line-text">
+                  Scorri le immagini dell'hotel: la piscina, il mare, le camere e gli spazi comuni che rendono ogni soggiorno al Pineta un'esperienza autentica.
+                </p>
+              </div>
+            </div>
+
+            <div class="gallery-grid">
+              <article class="gallery-card"><img src="immagine/piscina-h-pineta-2.webp" alt="Dessert Hotel Pineta" loading="lazy" /></article>
+              <article class="gallery-card"><img src="immagine/suite_mare.jpeg" alt="Suite vista mare Hotel Pineta" loading="lazy" /></article>
+              <article class="gallery-card"><img src="immagine/bagno-h-pineta-1.jpeg" alt="Cucina di pesce Hotel Pineta" loading="lazy" /></article>
+              <article class="gallery-card"><img src="immagine/Suite1.jpeg" alt="Suite Hotel Pineta" loading="lazy" /></article>
+                <a href="piscina-video.html" class="gallery-card gallery-video-link" target="_blank" rel="noopener">
+                  <span class="gallery-video-text">Mettiti comodo e tuffati in piscina con noi</span>
+                </a>
+            </div>
+
+            <div class="gallery-grid-extra">
+              <article class="gallery-card"><img src="immagine/suite_balcone1.jpeg" alt="Balcone suite Hotel Pineta" loading="lazy" /></article>
+              <article class="gallery-card"><img src="immagine/camera4.jpeg" alt="Camera relax Hotel Pineta" loading="lazy" /></article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="contatto">
+          <div class="container">
+            <div class="section-head">
+              <div>
+                <h2>Richiedi il tuo soggiorno su misura</h2>
+              </div>
+            </div>
+
+            <div class="contact-grid">
+              <section class="contact-card">
+
+                <form id="lead-form" class="lead-form">
+                <section class="form-block">
+                  <div class="form-block-header">
+                    <p>Scegli se vuoi informazioni rapide oppure un preventivo più completo.</p>
+                  </div>
+                  <div class="request-type">
+                    <label class="radio-card">
+                      <input type="radio" name="tipo_richiesta" value="Richiesta informazioni" checked />
+                      <span>Richiesta informazioni</span>
+                    </label>
+                    <label class="radio-card">
+                      <input type="radio" name="tipo_richiesta" value="Preventivo / prenotazione" />
+                      <span>Preventivo / prenotazione</span>
+                    </label>
+                  </div>
+                </section>
+
+                <section class="form-block">
+                  <div class="form-block-header">
+                    <p>I dati essenziali per ricontattarti in modo rapido.</p>
+                  </div>
+                  <div class="form-grid form-grid--triple">
+                    <div class="field">
+                      <label for="nome">Nome e cognome</label>
+                      <div class="app-input">
+                        <input id="nome" name="nome" type="text" placeholder="Il tuo nome" required />
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label for="telefono">Telefono</label>
+                      <div class="app-input">
+                        <input id="telefono" name="telefono" type="tel" placeholder="+39 ..." required />
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label for="email">Email</label>
+                      <div class="app-input">
+                        <input id="email" name="email" type="email" placeholder="nome@email.com" required />
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="form-block">
+                  <div class="form-block-header">
+                    <p>Periodo, trattamento e numero di camere nello stesso blocco.</p>
+                  </div>
+                  <div class="form-grid form-grid--triple">
+                    <div class="field">
+                      <label for="arrivo">Arrivo</label>
+                      <div class="app-date">
+                        <input id="arrivo" name="arrivo" type="text" placeholder="Seleziona data" autocomplete="off" required />
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label for="partenza">Partenza</label>
+                      <div class="app-date">
+                        <input id="partenza" name="partenza" type="text" placeholder="Seleziona data" autocomplete="off" required />
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label for="camere">Camere</label>
+                      <div class="app-select">
+                        <select id="camere" name="camere">
+                          <option>1 camera</option>
+                          <option>2 camere</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label for="trattamento">Trattamento</label>
+                      <div class="app-select">
+                        <select id="trattamento" name="trattamento" required>
+                          <option value="">Seleziona</option>
+                          <option>Pernottamento e colazione</option>
+                          <option>Mezza pensione</option>
+                          <option>Pensione completa</option>
+                          <option>Vorrei un consiglio</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label for="sistemazione">Sistemazione preferita</label>
+                      <div class="app-select">
+                        <select id="sistemazione" name="sistemazione">
+                          <option>Da consigliare</option>
+                          <option>Basic</option>
+                          <option>Comfort</option>
+                          <option>Superior</option>
+                          <option>Suite</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label for="contatto_preferito">Contatto preferito</label>
+                      <div class="app-select">
+                        <select id="contatto_preferito" name="contatto_preferito">
+                          <option>WhatsApp</option>
+                          <option>Telefono</option>
+                          <option>Email</option>
+                          <option>Indifferente</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="form-block">
+                  <div class="form-block-header">
+                    <p>Ogni camera ha la sua composizione: adulti, bambini ed età separate.</p>
+                  </div>
+                  <div id="room-list" class="room-list"></div>
+                  <div class="field">
+                    <label for="orario_contatto" class="label-soft">Fascia oraria di contatto</label>
+                    <div class="app-select">
+                      <select id="orario_contatto" name="orario_contatto">
+                        <option>Mattina</option>
+                        <option>Pomeriggio</option>
+                        <option>Sera</option>
+                        <option>Qualsiasi orario</option>
+                      </select>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="form-block">
+                  <div class="field-full">
+                    <label for="messaggio">Messaggio</label>
+                    <div class="app-input">
+                      <textarea id="messaggio" name="messaggio" placeholder="Scrivici esigenze particolari, età dei bimbi, budget, preferenza camera, allergie, vista mare desiderata o richieste speciali..."></textarea>
+                    </div>
+                  </div>
+
+                  <div class="privacy-box">
+                    <input id="privacy" name="privacy" type="checkbox" required />
+                    <label for="privacy">
+                      Accetto la privacy policy.
+                    </label>
+                  </div>
+
+                  <div class="form-actions">
+                    <button class="btn btn-primary" type="submit">Invia via email</button>
+                    <button class="btn btn-whatsapp" type="button" id="send-whatsapp">Invia su WhatsApp</button>
+                  </div>
+                  <div class="status" id="form-status" aria-live="polite"></div>
+                </section>
+              </form>
+            </section>
+
+            <aside class="contact-aside">
+              <span class="aside-badge">Recensioni verificate</span>
+              <h3>Dicono di noi</h3>
+
+              <article class="testimonial-card">
+                <h3>Ottime vacanze</h3>
+                <p>
+                  "Accoglienza calorosa, pulizia delle camere impeccabile e pasti ricchi. Comodo per l'accesso diretto al mare e vista favolosa sulla spiaggia."
+                </p>
+                <footer>Martina</footer>
+              </article>
+
+              <article class="testimonial-card">
+                <h3>Ottimo hotel</h3>
+                <p>
+                  "Piscina fantastica con acqua calda al punto giusto con idromassaggio in più punti della vasca. Personale efficiente, gentile e premuroso."
+                </p>
+                <footer>Daniela</footer>
+              </article>
+
+              <article class="testimonial-card">
+                <h3>Una vacanza perfetta</h3>
+                <p>
+                  "La piscina è favolosa e ci si rilassa tantissimo. Cortesia e professionalità e tanti piatti squisiti e abbondanti."
+                </p>
+                <footer>Sabrina</footer>
+              </article>
+
+              <div class="contact-info">
+                <a href="tel:+390541330401">
+                  <span>Telefono hotel</span>
+                  <span>+39 0541 330401</span>
+                </a>
+                <a href="mailto:info@h-pineta.com">
+                  <span>Email diretta</span>
+                  <span>info@h-pineta.com</span>
+                </a>
+                <a href="https://wa.me/390541330401?text=Buongiorno%2C%20vorrei%20ricevere%20informazioni%20sul%20soggiorno%20all%27Hotel%20Pineta." target="_blank" rel="noopener noreferrer">
+                  <span>WhatsApp diretto</span>
+                  <span>Contatto rapido</span>
+                </a>
+              </div>
+            </aside>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container footer-grid">
+          <div class="footer-brand">
+            <a class="footer-brand-link" href="https://www.h-pineta.com/" target="_blank" rel="noopener noreferrer" aria-label="Vai al sito ufficiale Hotel Pineta">
+              <img src="immagine/logo-hotel-pineta.png" alt="Logo Hotel Pineta bianco" />
+            </a>
+            <span class="footer-copy">Bellaria Igea Marina · hotel fronte mare con piscina, camere eleganti e cucina romagnola.</span>
+            <span class="footer-copy">Viale Pinzon 226 · 47814 Bellaria Igea Marina (RN)</span>
+          </div>
+
+          <div class="footer-col">
+            <h4>Contatti</h4>
+            <a href="tel:+390541330401">Tel. +39 0541 330401</a>
+            <a href="mailto:info@h-pineta.com">info@h-pineta.com</a>
+            <a href="https://www.h-pineta.com/" target="_blank" rel="noopener noreferrer">Sito ufficiale</a>
+            <a href="https://www.h-pineta.com/contatti/" target="_blank" rel="noopener noreferrer">Contatti</a>
+          </div>
+
+          <div class="footer-col">
+            <h4>Esperienza</h4>
+            <a href="https://www.h-pineta.com/piscina/" target="_blank" rel="noopener noreferrer">Piscina</a>
+            <a href="https://www.h-pineta.com/camere/" target="_blank" rel="noopener noreferrer">Camere e Suite</a>
+            <a href="https://www.h-pineta.com/ristorante/" target="_blank" rel="noopener noreferrer">Ristorante</a>
+            <a href="https://www.h-pineta.com/servizi/" target="_blank" rel="noopener noreferrer">Servizi</a>
+          </div>
+
+          <div class="footer-col">
+            <h4>Dati struttura</h4>
+            <p>P. IVA 00104470406</p>
+            <p>CIR 099001-AL-00035</p>
+            <p>CIN IT099001A1RDIBY5A4</p>
+          </div>
+        </div>
+
+        <div class="container footer-credits">
+          <div class="footer-bottom">© 2026 Hotel Pineta Bellaria Igea Marina</div>
+          <div class="footer-signature">
+            © 2026 Experience S.r.l. - Tutti i diritti riservati | <a href="admin/">Area admin</a> | tanggo.pro | tanggo.software prodotto da <a href="https://www.cv.joomlu.com/" target="_blank" rel="noopener noreferrer">cv.joomlu.com</a>
+          </div>
+        </div>
+      </footer>
+
+      <a
+        class="floating-whatsapp"
+        href="https://wa.me/390541330401?text=Buongiorno%2C%20vorrei%20ricevere%20informazioni%20sul%20soggiorno%20all%27Hotel%20Pineta."
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Apri WhatsApp"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20.52 3.48A11.86 11.86 0 0 0 12.07 0C5.53 0 .2 5.33.2 11.87c0 2.1.55 4.15 1.6 5.96L0 24l6.37-1.67a11.83 11.83 0 0 0 5.7 1.46h.01c6.54 0 11.87-5.33 11.87-11.87 0-3.17-1.23-6.15-3.43-8.44Zm-8.45 18.3h-.01a9.8 9.8 0 0 1-4.99-1.37l-.36-.21-3.78.99 1.01-3.68-.23-.38a9.81 9.81 0 0 1-1.5-5.26c0-5.42 4.41-9.83 9.84-9.83 2.63 0 5.09 1.02 6.95 2.88a9.79 9.79 0 0 1 2.88 6.95c0 5.42-4.41 9.83-9.81 9.83Zm5.39-7.35c-.29-.14-1.74-.86-2.01-.95-.27-.1-.47-.14-.67.14-.19.29-.76.95-.92 1.15-.17.19-.34.22-.63.07-.29-.14-1.21-.45-2.31-1.44-.86-.77-1.44-1.72-1.61-2.01-.17-.29-.02-.45.13-.6.14-.14.29-.34.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.19 0-.5.07-.76.36-.26.29-.99.97-.99 2.38 0 1.41 1.01 2.77 1.15 2.96.14.19 2 3.05 4.84 4.27.68.29 1.21.46 1.63.59.68.22 1.29.19 1.78.12.54-.08 1.74-.71 1.98-1.39.24-.67.24-1.25.17-1.39-.07-.12-.26-.19-.55-.34Z"></path>
+        </svg>
+        <span>WhatsApp</span>
+      </a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/it.js"></script>
+    <script>
+      const form = document.getElementById("lead-form");
+      const whatsappButton = document.getElementById("send-whatsapp");
+      const statusBox = document.getElementById("form-status");
+      const arrivalInput = document.getElementById("arrivo");
+      const departureInput = document.getElementById("partenza");
+      const roomsSelect = document.getElementById("camere");
+      const roomList = document.getElementById("room-list");
+      const whatsappNumber = "390541330401";
+      const submitButton = form.querySelector('button[type="submit"]');
+      let departurePicker = null;
+      let isSubmitting = false;
+
+      function setupDatepickers() {
+        if (!window.flatpickr) return;
+
+        flatpickr.localize(flatpickr.l10ns.it);
+
+        const commonOptions = {
+          locale: "it",
+          dateFormat: "d/m/Y",
+          disableMobile: true,
+          minDate: "today",
+          allowInput: true,
+        };
+
+        flatpickr(arrivalInput, {
+          ...commonOptions,
+          onChange: function (selectedDates) {
+            if (!departurePicker) return;
+            const selectedDate = selectedDates[0] || "today";
+            departurePicker.set("minDate", selectedDate);
+            if (
+              departurePicker.selectedDates[0] &&
+              selectedDates[0] &&
+              departurePicker.selectedDates[0] <= selectedDates[0]
+            ) {
+              departurePicker.clear();
+            }
+          },
+        });
+
+        departurePicker = flatpickr(departureInput, commonOptions);
+      }
+
+      function buildAgeSelect(roomIndex, childIndex) {
+        const card = document.createElement("div");
+        card.className = "child-age-card";
+
+        const label = document.createElement("label");
+        label.setAttribute("for", "room_" + roomIndex + "_eta_" + childIndex);
+        label.textContent = "Eta' bambino " + childIndex;
+
+        const select = document.createElement("select");
+        select.id = "room_" + roomIndex + "_eta_" + childIndex;
+        select.name = "room_" + roomIndex + "_eta_" + childIndex;
+
+        const ages = [
+          "meno di 1 anno","1 anno","2 anni","3 anni","4 anni","5 anni","6 anni","7 anni","8 anni","9 anni","10 anni","11 anni","12 anni","13+ anni"
+        ];
+
+        ages.forEach(function (age) {
+          const option = document.createElement("option");
+          option.value = age;
+          option.textContent = age;
+          select.appendChild(option);
+        });
+
+        card.appendChild(label);
+        card.appendChild(select);
+        return card;
+      }
+
+      function renderRoomAgeFields(roomIndex) {
+        const childrenField = document.getElementById("room_" + roomIndex + "_bambini");
+        const ageWrap = document.getElementById("room_" + roomIndex + "_ages_wrap");
+        const ageList = document.getElementById("room_" + roomIndex + "_ages");
+        const count = Number(childrenField.value || 0);
+
+        ageList.innerHTML = "";
+        if (count <= 0) {
+          ageWrap.hidden = true;
+          return;
+        }
+
+        ageWrap.hidden = false;
+        for (let index = 1; index <= count; index += 1) {
+          ageList.appendChild(buildAgeSelect(roomIndex, index));
+        }
+      }
+
+      function buildRoomCard(roomIndex) {
+        const roomCard = document.createElement("div");
+        roomCard.className = "room-card-dynamic";
+
+        const roomHead = document.createElement("div");
+        roomHead.className = "room-card-head";
+        roomHead.innerHTML = "<h4>Camera " + roomIndex + "</h4><span>Composizione della camera</span>";
+
+        const guestGrid = document.createElement("div");
+        guestGrid.className = "guest-grid";
+        guestGrid.innerHTML = [
+          '<div class="field"><label for="room_' + roomIndex + '_adulti">Adulti</label><div class="app-select"><select id="room_' + roomIndex + '_adulti" name="room_' + roomIndex + '_adulti"><option>2</option><option>1</option><option>3</option><option>4</option><option>5+</option></select></div></div>',
+          '<div class="field"><label for="room_' + roomIndex + '_bambini">Bambini</label><div class="app-select"><select id="room_' + roomIndex + '_bambini" name="room_' + roomIndex + '_bambini"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></div></div>',
+          '<div class="field"><label for="room_' + roomIndex + '_note">Nota camera</label><div class="app-input"><input id="room_' + roomIndex + '_note" name="room_' + roomIndex + '_note" type="text" placeholder="Es. vista mare, balcone ampio, suite..." /></div></div>'
+        ].join("");
+
+        const ageWrap = document.createElement("div");
+        ageWrap.className = "field-full";
+        ageWrap.id = "room_" + roomIndex + "_ages_wrap";
+        ageWrap.hidden = true;
+        ageWrap.innerHTML = '<label>Eta\' bambini camera ' + roomIndex + '</label><div id="room_' + roomIndex + '_ages" class="child-age-list"></div>';
+
+        roomCard.appendChild(roomHead);
+        roomCard.appendChild(guestGrid);
+        roomCard.appendChild(ageWrap);
+        return roomCard;
+      }
+
+      function renderRoomCards() {
+        const count = Number((roomsSelect.value || "1").charAt(0));
+        roomList.innerHTML = "";
+
+        for (let roomIndex = 1; roomIndex <= count; roomIndex += 1) {
+          roomList.appendChild(buildRoomCard(roomIndex));
+        }
+
+        for (let roomIndex = 1; roomIndex <= count; roomIndex += 1) {
+          const roomChildrenSelect = document.getElementById("room_" + roomIndex + "_bambini");
+          roomChildrenSelect.addEventListener("change", function () {
+            renderRoomAgeFields(roomIndex);
+          });
+          renderRoomAgeFields(roomIndex);
+        }
+      }
+
+      function getSelectedRequestType() {
+        const selected = form.querySelector('input[name="tipo_richiesta"]:checked');
+        return selected ? selected.value : "";
+      }
+
+      function getRoomSummary() {
+        const count = Number((roomsSelect.value || "1").charAt(0));
+        const rooms = [];
+
+        for (let roomIndex = 1; roomIndex <= count; roomIndex += 1) {
+          const adults = form.querySelector('[name="room_' + roomIndex + '_adulti"]').value;
+          const children = form.querySelector('[name="room_' + roomIndex + '_bambini"]').value;
+          const note = form.querySelector('[name="room_' + roomIndex + '_note"]').value;
+          const ages = Array.from(form.querySelectorAll('[name^="room_' + roomIndex + '_eta_"]'))
+            .map(function (field, index) {
+              return "Bambino " + (index + 1) + ": " + field.value;
+            })
+            .join(", ");
+
+          rooms.push(
+            "Camera " + roomIndex + ": " +
+            adults + " adulti, " +
+            children + " bambini" +
+            (ages ? " | Eta': " + ages : "") +
+            (note ? " | Nota: " + note : "")
+          );
+        }
+
+        return rooms.join("\n");
+      }
+
+      function formDataToMessage() {
+        const data = new FormData(form);
+        const rows = [
+          getSelectedRequestType() + " - Hotel Pineta luxury landing",
+          "",
+          "Nome: " + (data.get("nome") || ""),
+          "Telefono: " + (data.get("telefono") || ""),
+          "Email: " + (data.get("email") || ""),
+          "Contatto preferito: " + (data.get("contatto_preferito") || ""),
+          "Arrivo: " + (data.get("arrivo") || ""),
+          "Partenza: " + (data.get("partenza") || ""),
+          "Trattamento: " + (data.get("trattamento") || ""),
+          "Camere: " + (data.get("camere") || ""),
+          "Sistemazione: " + (data.get("sistemazione") || ""),
+          "Composizione camere:",
+          getRoomSummary(),
+          "Orario contatto: " + (data.get("orario_contatto") || ""),
+          "Messaggio: " + (data.get("messaggio") || "")
+        ];
+
+        return rows.join("\n");
+      }
+
+      function buildLeadPayload(channel) {
+        const data = new FormData(form);
+        return {
+          channel: channel,
+          tipo: getSelectedRequestType(),
+          nome: (data.get("nome") || "").toString(),
+          telefono: (data.get("telefono") || "").toString(),
+          email: (data.get("email") || "").toString(),
+          arrivo: (data.get("arrivo") || "").toString(),
+          partenza: (data.get("partenza") || "").toString(),
+          trattamento: (data.get("trattamento") || "").toString(),
+          camere: (data.get("camere") || "").toString(),
+          sistemazione: (data.get("sistemazione") || "").toString(),
+          contattoPreferito: (data.get("contatto_preferito") || "").toString(),
+          orarioContatto: (data.get("orario_contatto") || "").toString(),
+          messaggio: (data.get("messaggio") || "").toString(),
+          composizioneCamere: getRoomSummary(),
+          rawMessage: formDataToMessage()
+        };
+      }
+
+      function setSubmitState(loading) {
+        isSubmitting = loading;
+        if (submitButton) submitButton.disabled = loading;
+        if (whatsappButton) whatsappButton.disabled = loading;
+      }
+
+      async function submitLead(channel) {
+        const response = await fetch("lead-submit.php", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+          },
+          body: JSON.stringify(buildLeadPayload(channel))
+        });
+
+        let payload = {};
+        try {
+          payload = await response.json();
+        } catch (error) {
+          payload = {};
+        }
+
+        if (!response.ok || !payload.ok) {
+          throw new Error(payload.error || "Invio non riuscito. Controlla la configurazione del server.");
+        }
+
+        return payload;
+      }
+
+      function validateForm() {
+        if (!form.reportValidity()) {
+          statusBox.textContent = "Compila i campi obbligatori prima di inviare la richiesta.";
+          return false;
+        }
+        statusBox.textContent = "";
+        return true;
+      }
+
+      function syncKitchenImageZoom() {
+        const panel = document.querySelector(".story-panel--kitchen");
+        if (!panel) return;
+
+        const image = panel.querySelector("img");
+        if (!image || !image.naturalWidth || !image.naturalHeight) return;
+
+        const panelWidth = panel.clientWidth;
+        const panelHeight = panel.clientHeight;
+        if (!panelWidth || !panelHeight) return;
+
+        const containScale = Math.min(panelWidth / image.naturalWidth, panelHeight / image.naturalHeight);
+        const coverScale = Math.max(panelWidth / image.naturalWidth, panelHeight / image.naturalHeight);
+        const zoomScale = containScale ? coverScale / containScale : 1;
+
+        panel.style.setProperty("--kitchen-cover-scale", zoomScale.toFixed(3));
+      }
+
+      roomsSelect.addEventListener("change", renderRoomCards);
+      setupDatepickers();
+      renderRoomCards();
+      syncKitchenImageZoom();
+
+      const kitchenImage = document.querySelector(".story-panel--kitchen img");
+      if (kitchenImage && !kitchenImage.complete) {
+        kitchenImage.addEventListener("load", syncKitchenImageZoom, { once: true });
+      }
+      window.addEventListener("resize", syncKitchenImageZoom);
+
+      form.addEventListener("submit", async function (event) {
+        event.preventDefault();
+        if (isSubmitting || !validateForm()) return;
+
+        setSubmitState(true);
+        statusBox.textContent = "Invio della richiesta in corso...";
+
+        try {
+          await submitLead("email");
+          statusBox.textContent = "Richiesta inviata correttamente a info@hotelpineta.bellariaigeamarina.info, info@h-pineta.com e salvata nel CRM.";
+        } catch (error) {
+          statusBox.textContent = error instanceof Error
+            ? error.message
+            : "Invio non riuscito. Se stai aprendo il file in locale, prova dal dominio online o da un server PHP.";
+        } finally {
+          setSubmitState(false);
+        }
+      });
+
+      whatsappButton.addEventListener("click", async function () {
+        if (isSubmitting || !validateForm()) return;
+
+        setSubmitState(true);
+        statusBox.textContent = "Salvataggio della richiesta e apertura WhatsApp in corso...";
+
+        try {
+          await submitLead("whatsapp");
+          const message = encodeURIComponent(formDataToMessage());
+          window.open("https://wa.me/" + whatsappNumber + "?text=" + message, "_blank", "noopener");
+          statusBox.textContent = "Richiesta salvata nel CRM e inviata via email. Si sta aprendo WhatsApp con il messaggio pronto.";
+        } catch (error) {
+          statusBox.textContent = error instanceof Error
+            ? error.message
+            : "Operazione non riuscita. Se stai aprendo il file in locale, prova dal dominio online o da un server PHP.";
+        } finally {
+          setSubmitState(false);
+        }
+      });
+    </script>
+  </body>
+</html>

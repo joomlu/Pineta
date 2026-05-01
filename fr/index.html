@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18127184057"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-18127184057');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotel Pineta | Hotel en bord de mer a Bellaria Igea Marina</title>
+    <meta
+      name="description"
+      content="Hotel Pineta a Bellaria Igea Marina: hotel trois etoiles en bord de mer avec piscine chauffee, cuisine romagnole, chambres lumineuses et accueil familial."
+    />
+    <style>
+      :root {
+        --sand: #f5ede2;
+        --sand-deep: #ead8c0;
+        --sea: #c88f90;
+        --sea-deep: #a46263;
+        --ink: #1f1b18;
+        --muted: #675d56;
+        --card: rgba(255, 255, 255, 0.9);
+        --line: rgba(31, 27, 24, 0.08);
+        --shadow: 0 24px 60px rgba(34, 25, 18, 0.12);
+        --radius-xl: 34px;
+        --radius-lg: 26px;
+        --maxw: 1180px;
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+
+      body {
+        margin: 0;
+        font-family: "Georgia", "Times New Roman", serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at top left, rgba(164, 98, 99, 0.16), transparent 38%),
+          radial-gradient(circle at top right, rgba(200, 143, 144, 0.12), transparent 28%),
+          linear-gradient(180deg, #fbf7f2 0%, #f4ebdf 100%);
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .container {
+        width: min(calc(100vw - 32px), var(--maxw));
+        margin: 0 auto;
+      }
+
+      .page-fr {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .page-fr > .hero { order: 1; }
+      .page-fr > .section-pool { order: 2; }
+      .page-fr > .section-dining { order: 3; }
+      .page-fr > .section-rooms { order: 4; }
+      .page-fr > .section-gallery { order: 5; }
+      .page-fr > .section-hotel { order: 6; }
+      .page-fr > .section-contact { order: 7; }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        backdrop-filter: blur(14px);
+        background: rgba(251, 247, 242, 0.8);
+        border-bottom: 1px solid rgba(31, 27, 24, 0.06);
+      }
+
+      .topbar-inner {
+        min-height: 82px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 20px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .brand img {
+        width: 58px;
+        height: 58px;
+        object-fit: contain;
+      }
+
+      .brand small,
+      .eyebrow {
+        display: block;
+        font-family: Arial, sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        font-size: 0.66rem;
+        color: var(--sea-deep);
+      }
+
+      .brand strong {
+        display: block;
+        font-size: 1.15rem;
+        line-height: 1;
+      }
+
+      .top-actions,
+      .hero-actions,
+      .contact-actions,
+      .footer-credits {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        min-height: 48px;
+        padding: 0 20px;
+        border-radius: 999px;
+        border: 1px solid transparent;
+        font-family: Arial, sans-serif;
+        font-size: 0.93rem;
+        font-weight: 700;
+        transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+      }
+
+      .btn:hover { transform: translateY(-2px); }
+
+      .btn-primary {
+        background: #A46263;
+        color: #fff;
+        box-shadow: 0 16px 30px rgba(164, 98, 99, 0.28);
+      }
+
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.82);
+        border-color: rgba(31, 27, 24, 0.1);
+      }
+
+      .btn-whatsapp {
+        background: #8f5354;
+        color: #fff;
+        box-shadow: 0 14px 28px rgba(164, 98, 99, 0.24);
+      }
+
+      .btn svg,
+      .floating-whatsapp svg {
+        width: 22px;
+        height: 22px;
+        fill: currentColor;
+        flex: 0 0 auto;
+      }
+
+      .hero {
+        padding: 28px 0 64px;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 22px;
+        align-items: start;
+      }
+
+      .hero-copy,
+      .booking-card,
+      .section-card,
+      .feature-card,
+      .room-card,
+      .contact-panel,
+      .gallery-card,
+      .quote-card {
+        border-radius: var(--radius-xl);
+        background: var(--card);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+      }
+
+      .hero-copy {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 12px 10px 0;
+        background: transparent;
+        border: 0;
+        box-shadow: none;
+        text-align: center;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        font-weight: 600;
+        line-height: 1.02;
+      }
+
+      h1 {
+        margin-top: 10px;
+        font-size: clamp(2.2rem, 4.6vw, 3.6rem);
+      }
+
+      h2 {
+        font-size: clamp(1.7rem, 3vw, 2.55rem);
+        margin-bottom: 10px;
+      }
+
+      h3 {
+        font-size: clamp(1.2rem, 2.1vw, 1.68rem);
+        margin-bottom: 10px;
+      }
+
+      p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.68;
+        font-size: 0.98rem;
+      }
+
+      .hero-copy p + p,
+      .section-copy p + p,
+      .quote-card p + p {
+        margin-top: 14px;
+      }
+
+      .hero-points,
+      .spec-list,
+      .contact-list {
+        display: grid;
+        gap: 12px;
+        margin: 16px 0 0;
+      }
+
+      .hero-points div,
+      .spec-list div,
+      .contact-list a,
+      .contact-list div {
+        padding: 14px 16px;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.64);
+        border: 1px solid rgba(31, 27, 24, 0.06);
+        font-family: Arial, sans-serif;
+        font-size: 0.94rem;
+        color: var(--ink);
+      }
+
+      .hero-visuals,
+      .visual-duo,
+      .gallery-grid {
+        display: grid;
+        gap: 18px;
+      }
+
+      .hero-visuals {
+        grid-template-columns: minmax(0, 1.18fr) 360px;
+        align-items: stretch;
+      }
+
+      .hero-main-image,
+      .visual-card,
+      .gallery-card {
+        overflow: hidden;
+        border-radius: 30px;
+        position: relative;
+      }
+
+      .hero-main-image {
+        min-height: 620px;
+      }
+
+      .hero-main-image { grid-column: 1; grid-row: 1; }
+
+      .visual-duo {
+        grid-template-columns: 1fr;
+        grid-column: 2;
+        grid-row: 1;
+        align-content: stretch;
+      }
+
+      .hero-main-image img,
+      .visual-card img,
+      .gallery-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .visual-card {
+        min-height: 300px;
+      }
+
+      .room-copy strong,
+      .footer-col h4 {
+        display: block;
+        margin-top: 16px;
+        margin-bottom: 6px;
+        font-family: Arial, sans-serif;
+        font-size: 0.84rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .room-copy strong {
+        color: var(--sea-deep);
+      }
+
+      .section {
+        padding: 0 0 72px;
+      }
+
+      .section-head {
+        margin-bottom: 22px;
+      }
+
+      .feature-grid,
+      .rooms-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .feature-card,
+      .room-card,
+      .section-card,
+      .quote-card {
+        padding: 26px;
+      }
+
+      .feature-card span,
+      .room-card span {
+        display: inline-flex;
+        align-items: center;
+        min-height: 28px;
+        padding: 0 11px;
+        border-radius: 999px;
+        background: rgba(164, 98, 99, 0.13);
+        color: var(--sea-deep);
+        font-family: Arial, sans-serif;
+        font-size: 0.76rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+      }
+
+      .feature-card p,
+      .room-card p {
+        font-size: 0.95rem;
+      }
+
+      .split-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.04fr) minmax(320px, 0.96fr);
+        gap: 22px;
+      }
+
+      .section-card--visual {
+        padding: 0;
+        overflow: hidden;
+      }
+
+      .section-card--visual img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .section-copy {
+        padding: 28px;
+      }
+
+      .quote-card {
+        background: linear-gradient(135deg, rgba(188,126,127,0.92), rgba(145,88,89,0.94));
+        color: #fff;
+      }
+
+      .quote-card p {
+        color: rgba(255, 255, 255, 0.86);
+      }
+
+      .quote-card strong {
+        color: #fff;
+      }
+
+      .dining-grid,
+      .contact-grid,
+      .footer-grid {
+        display: grid;
+        gap: 22px;
+      }
+
+      .dining-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(320px, 390px);
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .gallery-card {
+        min-height: 220px;
+      }
+
+      .room-card {
+        overflow: hidden;
+        padding: 0;
+      }
+
+      .room-card img {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+      }
+
+      .room-copy {
+        padding: 22px;
+      }
+
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(320px, 380px);
+      }
+
+      .contact-panel {
+        padding: 30px;
+      }
+
+      .fr-lead-form {
+        display: grid;
+        gap: 14px;
+        margin-top: 24px;
+      }
+
+      .fr-form-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .fr-field {
+        display: grid;
+        gap: 8px;
+      }
+
+      .fr-field--full {
+        grid-column: 1 / -1;
+      }
+
+      .fr-field label {
+        font-family: Arial, sans-serif;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--sea-deep);
+      }
+
+      .fr-field input,
+      .fr-field select,
+      .fr-field textarea {
+        width: 100%;
+        min-height: 50px;
+        padding: 0 16px;
+        border-radius: 18px;
+        border: 1px solid rgba(31, 27, 24, 0.1);
+        background: rgba(255, 255, 255, 0.86);
+        color: var(--ink);
+        font: inherit;
+      }
+
+      .fr-field textarea {
+        min-height: 126px;
+        padding: 14px 16px;
+        resize: vertical;
+      }
+
+      .fr-status {
+        min-height: 24px;
+        font-family: Arial, sans-serif;
+        font-size: 0.9rem;
+        color: var(--sea-deep);
+      }
+
+      .footer {
+        margin-top: 24px;
+        padding: 34px 0 44px;
+        background: #171312;
+        color: rgba(255,255,255,0.8);
+      }
+
+      .footer-grid {
+        grid-template-columns: minmax(0, 1.2fr) repeat(3, minmax(0, 0.9fr));
+        gap: 32px;
+        align-items: start;
+      }
+
+      .footer-brand {
+        display: grid;
+        gap: 10px;
+        justify-items: start;
+      }
+
+      .footer-brand-link {
+        display: inline-grid;
+        gap: 10px;
+        color: #fff;
+      }
+
+      .footer-brand img {
+        width: 120px;
+        height: auto;
+        object-fit: contain;
+        margin-bottom: 10px;
+      }
+
+      .footer-copy,
+      .footer-col a,
+      .footer-col p,
+      .footer-bottom,
+      .footer-signature {
+        font-family: Arial, sans-serif;
+        font-size: 0.92rem;
+        line-height: 1.72;
+      }
+
+      .footer-copy,
+      .footer-col a,
+      .footer-col p,
+      .footer-bottom,
+      .footer-signature,
+      .footer-signature a {
+        color: rgba(255,255,255,0.8);
+      }
+
+      .footer-col {
+        display: grid;
+        gap: 6px;
+      }
+
+      .footer-col h4 {
+        margin: 0 0 6px;
+        color: #fff;
+      }
+
+      .footer-col a:hover,
+      .footer-signature a:hover {
+        color: #fff;
+      }
+
+      .footer-credits {
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        padding-top: 24px;
+        margin-top: 24px;
+        border-top: 1px solid rgba(255,255,255,0.08);
+      }
+
+      .floating-whatsapp {
+        position: fixed;
+        right: 18px;
+        bottom: 18px;
+        z-index: 60;
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: #A46263;
+        color: #fff;
+        box-shadow: 0 18px 34px rgba(164, 98, 99, 0.30);
+      }
+
+      .floating-whatsapp span { display: none; }
+      .floating-whatsapp svg { width: 30px; height: 30px; }
+
+      @media (max-width: 1080px) {
+        .hero-grid,
+        .split-grid,
+        .dining-grid,
+        .contact-grid,
+        .feature-grid,
+        .rooms-grid,
+        .gallery-grid,
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-visuals {
+          grid-template-columns: 1fr;
+        }
+
+        .visual-duo {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .hero-copy { order: 2; }
+        .hero-visuals { order: 1; }
+
+        .hero-main-image,
+        .visual-duo {
+          grid-column: auto;
+          grid-row: auto;
+        }
+
+        .hero-main-image {
+          min-height: 520px;
+        }
+
+        .gallery-card {
+          min-height: 280px;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .topbar-inner,
+        .footer-credits {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .hero-copy,
+        .feature-card,
+        .room-copy,
+        .section-copy,
+        .quote-card,
+        .booking-card,
+        .contact-panel {
+          padding: 22px;
+        }
+
+        .visual-duo {
+          grid-template-columns: 1fr;
+        }
+
+        .fr-form-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-main-image {
+          min-height: 440px;
+        }
+
+        .btn,
+        .floating-whatsapp {
+          width: 100%;
+        }
+
+        .floating-whatsapp {
+          width: 58px;
+          height: 58px;
+          right: 14px;
+          bottom: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <a class="brand" href="https://www.h-pineta.com/fr/" target="_blank" rel="noopener noreferrer" aria-label="Site officiel Hotel Pineta en francais">
+          <img src="../immagine/logo-hotel-pineta-rosso.png" alt="Logo Hotel Pineta" />
+          <div>
+            <small>Bellaria Igea Marina</small>
+            <strong>Hotel Pineta</strong>
+          </div>
+        </a>
+
+      </div>
+    </header>
+
+    <main class="page-fr">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">Igea Marina</span>
+            <h1>Face a la mer, a 10 metres de la plage.</h1>
+            <p>
+              Piscine chauffee, cuisine romagnole et atmosphere detendue.
+            </p>
+          </div>
+
+          <div class="hero-visuals">
+            <div class="hero-main-image">
+              <img src="../fr/pdf-assets/page01-01.jpg" alt="Hotel Pineta face a la mer" />
+            </div>
+
+            <div class="visual-duo">
+              <div class="visual-card">
+                <img src="../fr/pdf-assets/page03-02.jpg" alt="Terrasse de l'hotel" />
+              </div>
+              <div class="visual-card">
+                <img src="../fr/pdf-assets/page06-01.jpg" alt="Bar de l'hotel" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-hotel">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">L'hotel</span>
+            <h2>Grand hall, jardin, terrasse et tous les equipements pour agrementer votre sejour.</h2>
+            <p>
+              Une adresse familiale, complete et tres proche de la mer.
+            </p>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card">
+              <span>Accueil</span>
+              <h3>Un grand hall et des espaces climatisees</h3>
+              <p>Des espaces simples et agreables des l'arrivee.</p>
+            </article>
+
+            <article class="feature-card">
+              <span>Exterieur</span>
+              <h3>Grande terrasse et jardin paisible</h3>
+              <p>Parfait pour les pauses cafe et les aperitifs.</p>
+            </article>
+
+            <article class="feature-card">
+              <span>Loisirs</span>
+              <h3>American bar et salle TV</h3>
+              <p>Des lieux conviviaux pour prolonger la journee.</p>
+            </article>
+
+            <article class="feature-card">
+              <span>Praticite</span>
+              <h3>Ascenseur et parking</h3>
+              <p>Des services utiles pour un sejour plus facile.</p>
+            </article>
+
+            <article class="feature-card">
+              <span>Renovation</span>
+              <h3>Batiment renove en 2022</h3>
+              <p>Une structure remise a neuf, fidele a son esprit romagnol.</p>
+            </article>
+
+            <article class="feature-card">
+              <span>Position</span>
+              <h3>Au coeur d'Igea Marina</h3>
+              <p>A deux pas de la mer, pour des vacances sans voiture.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-pool">
+        <div class="container split-grid">
+          <article class="section-card section-card--visual">
+            <img src="../fr/pdf-assets/page04-02.jpg" alt="Piscine chauffee avec hydromassage" />
+          </article>
+
+          <article class="section-card section-copy">
+            <span class="eyebrow">Piscine chauffee</span>
+            <h2>Piscine chauffee, hydromassage et bassin enfants.</h2>
+            <p>
+              Eau chauffee, geysers et detente apres la plage.
+            </p>
+
+            <div class="spec-list">
+              <div>Hydromassage, cascade cervicale et geysers.</div>
+              <div>Petit bassin reserve aux enfants.</div>
+            </div>
+
+            <div class="hero-actions" style="margin-top: 24px;">
+              <a class="btn btn-primary" href="../piscina-video.html" target="_blank" rel="noopener noreferrer">Video piscine</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-dining">
+        <div class="container dining-grid">
+          <div style="display: grid; gap: 22px;">
+            <article class="section-card section-copy">
+              <span class="eyebrow">Petit dejeuner et bar</span>
+              <h2>Le petit dejeuner buffet pour bien commencer la journee.</h2>
+              <p>
+                Gateaux, sale, aperitifs et moments simples a vivre en bord de mer.
+              </p>
+            </article>
+
+            <div class="gallery-grid" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
+              <article class="gallery-card"><img src="../fr/pdf-assets/page08-02.jpg" alt="Petit dejeuner buffet" /></article>
+              <article class="gallery-card"><img src="../fr/pdf-assets/page06-01.jpg" alt="Bar de l'hotel" /></article>
+            </div>
+          </div>
+
+          <article class="quote-card">
+            <span class="eyebrow" style="color: rgba(255,255,255,0.72);">Restaurant</span>
+            <h3>Les plaisirs de la table dans un cadre agreable et familial.</h3>
+            <p>
+              Cuisine italienne, specialites romagnoles et service attentif dans une atmosphere familiale.
+            </p>
+            <strong>Une cuisine inspiree par le meilleur de la culture gastronomique italienne et de la region.</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-rooms" id="chambres">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Chambres</span>
+            <h2>L'escalier de style Liberty mene a des chambres spacieuses et lumineuses.</h2>
+            <p>
+              Chambres lumineuses, trois etages avec ascenseur et categories bien identifiees.
+            </p>
+          </div>
+
+          <div class="rooms-grid">
+            <article class="room-card">
+              <img src="../fr/pdf-assets/page15-02.jpg" alt="Chambre Comfort Hotel Pineta" />
+              <div class="room-copy">
+                <span>Chambre Comfort</span>
+                <h3>Avec balcon et salle de bains privee avec cabine de douche.</h3>
+                <p>
+                  Le confort essentiel pour un sejour pratique au bord de la mer.
+                </p>
+                <strong>Confort quotidien</strong>
+                <p>Une solution lumineuse et facile a vivre.</p>
+              </div>
+            </article>
+
+            <article class="room-card">
+              <img src="../fr/pdf-assets/page17-02.jpg" alt="Chambre Superior Hotel Pineta" />
+              <div class="room-copy">
+                <span>Chambre Superior</span>
+                <h3>Avec balcon, frigobar et une dotation plus complete.</h3>
+                <p>
+                  Une chambre plus complete pour ceux qui cherchent un peu plus de confort.
+                </p>
+                <strong>Plus de bien-etre</strong>
+                <p>Plus de confort sans perdre l'esprit familial.</p>
+              </div>
+            </article>
+
+            <article class="room-card">
+              <img src="../fr/pdf-assets/page14-02.jpg" alt="Escalier et chambres Hotel Pineta" />
+              <div class="room-copy">
+                <span>Atmosphere</span>
+                <h3>Trois etages, ascenseur et lumiere naturelle.</h3>
+                <p>
+                  Une ambiance simple, lumineuse et detendue a deux pas de la mer.
+                </p>
+                <strong>Style de l'hotel</strong>
+                <p>Fidele au caractere historique et familial de l'hotel.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-gallery">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Galerie</span>
+            <h2>Quelques images pour retrouver l'atmosphere du sejour.</h2>
+          </div>
+
+          <div class="gallery-grid">
+            <article class="gallery-card"><img src="../fr/pdf-assets/page05-02.png" alt="Piscine avec hydromassage" /></article>
+            <article class="gallery-card"><img src="../fr/pdf-assets/page09-02.jpg" alt="Salle a manger Hotel Pineta" /></article>
+            <article class="gallery-card"><img src="../fr/pdf-assets/page10-02.jpg" alt="Cuisine romagnole" /></article>
+            <article class="gallery-card"><img src="../fr/pdf-assets/page12-02.jpg" alt="Buffet et plats de l'hotel" /></article>
+            <article class="gallery-card"><img src="../fr/pdf-assets/page13-02.png" alt="Dessert Hotel Pineta" /></article>
+            <article class="gallery-card"><img src="../fr/pdf-assets/page18-02.jpg" alt="Salle de bains chambre Superior" /></article>
+            <article class="gallery-card"><img src="../fr/pdf-assets/page19-02.jpg" alt="Chambres sur trois etages" /></article>
+            <article class="gallery-card"><img src="../fr/pdf-assets/page20-02.jpg" alt="Nocturne scintillante Hotel Pineta" /></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-contact" id="contact">
+        <div class="container contact-grid">
+          <article class="contact-panel">
+            <span class="eyebrow">Informations et reservation</span>
+            <h2>Contactez directement Hotel Pineta.</h2>
+            <p>
+              Envoyez votre demande en quelques secondes: elle arrive a l'hotel, a l'adresse principale et au CRM en meme temps.
+            </p>
+
+            <form id="fr-lead-form" class="fr-lead-form" novalidate>
+              <div class="fr-form-grid">
+                <div class="fr-field">
+                  <label for="fr-type">Demande</label>
+                  <select id="fr-type" name="tipo">
+                    <option value="Demande de devis">Demande de devis</option>
+                    <option value="Demande de disponibilite">Demande de disponibilite</option>
+                    <option value="Demande d'informations">Demande d'informations</option>
+                  </select>
+                </div>
+
+                <div class="fr-field">
+                  <label for="fr-contact">Contact prefere</label>
+                  <select id="fr-contact" name="contattoPreferito">
+                    <option value="Email">Email</option>
+                    <option value="Telephone">Telephone</option>
+                    <option value="WhatsApp">WhatsApp</option>
+                  </select>
+                </div>
+
+                <div class="fr-field">
+                  <label for="fr-nome">Nom et prenom</label>
+                  <input id="fr-nome" name="nome" type="text" required />
+                </div>
+
+                <div class="fr-field">
+                  <label for="fr-telefono">Telephone</label>
+                  <input id="fr-telefono" name="telefono" type="tel" required />
+                </div>
+
+                <div class="fr-field">
+                  <label for="fr-email">Email</label>
+                  <input id="fr-email" name="email" type="email" required />
+                </div>
+
+                <div class="fr-field">
+                  <label for="fr-trattamento">Formule</label>
+                  <select id="fr-trattamento" name="trattamento">
+                    <option value="">A definir</option>
+                    <option value="Chambre et petit dejeuner">Chambre et petit dejeuner</option>
+                    <option value="Demi-pension">Demi-pension</option>
+                    <option value="Pension complete">Pension complete</option>
+                  </select>
+                </div>
+
+                <div class="fr-field">
+                  <label for="fr-arrivo">Arrivee</label>
+                  <input id="fr-arrivo" name="arrivo" type="date" />
+                </div>
+
+                <div class="fr-field">
+                  <label for="fr-partenza">Depart</label>
+                  <input id="fr-partenza" name="partenza" type="date" />
+                </div>
+
+                <div class="fr-field fr-field--full">
+                  <label for="fr-messaggio">Message</label>
+                  <textarea id="fr-messaggio" name="messaggio" placeholder="Dates, type de chambre, nombre de personnes, besoins particuliers..."></textarea>
+                </div>
+              </div>
+
+              <div class="fr-status" id="fr-form-status" aria-live="polite"></div>
+
+              <div class="contact-actions">
+                <button class="btn btn-primary" type="submit">Envoyer la demande</button>
+                <button class="btn btn-whatsapp" id="fr-send-whatsapp" type="button">WhatsApp</button>
+              </div>
+            </form>
+
+            <div class="contact-list" style="margin-top: 24px;">
+              <a href="mailto:info@h-pineta.com">info@h-pineta.com</a>
+              <a href="tel:+390541330401">+39 0541 330401</a>
+              <a href="tel:+393388945536">+39 338 8945536</a>
+              <a href="tel:+393358355640">+39 335 8355640</a>
+            </div>
+          </article>
+
+          <article class="section-card section-copy">
+            <span class="eyebrow">Adresse</span>
+            <h3>Hotel Pineta</h3>
+            <p>Viale Pinzon, 226<br />47814 Bellaria Igea Marina (RN)<br />Italia</p>
+            <div class="spec-list" style="margin-top: 22px;">
+              <div><a href="https://www.h-pineta.com/fr/" target="_blank" rel="noopener noreferrer">https://www.h-pineta.com/fr/</a></div>
+              <div><a href="https://www.h-pineta.com/fr/" target="_blank" rel="noopener noreferrer">Ouvrir le site officiel en francais</a></div>
+              <div>Hotel a 10 metres de la plage, dans le centre balneaire d'Igea Marina.</div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a class="footer-brand-link" href="https://www.h-pineta.com/fr/" target="_blank" rel="noopener noreferrer" aria-label="Site officiel Hotel Pineta en francais">
+            <img src="../immagine/logo-hotel-pineta.png" alt="Logo Hotel Pineta bianco" />
+          </a>
+          <span class="footer-copy">Bellaria Igea Marina · hotel en bord de mer avec piscine, chambres elegantes et cuisine romagnole.</span>
+          <span class="footer-copy">Viale Pinzon 226 · 47814 Bellaria Igea Marina (RN)</span>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contacts</h4>
+          <a href="tel:+390541330401">Tel. +39 0541 330401</a>
+          <a href="mailto:info@h-pineta.com">info@h-pineta.com</a>
+          <a href="https://www.h-pineta.com/fr/" target="_blank" rel="noopener noreferrer">Site officiel</a>
+          <a href="https://www.h-pineta.com/fr/" target="_blank" rel="noopener noreferrer">Contacts</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Experience</h4>
+          <a href="https://www.h-pineta.com/fr/" target="_blank" rel="noopener noreferrer">Piscine</a>
+          <a href="https://www.h-pineta.com/fr/" target="_blank" rel="noopener noreferrer">Chambres et Suites</a>
+          <a href="https://www.h-pineta.com/fr/" target="_blank" rel="noopener noreferrer">Restaurant</a>
+          <a href="https://www.h-pineta.com/fr/" target="_blank" rel="noopener noreferrer">Services</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Donnees de l'etablissement</h4>
+          <p>P. IVA 00104470406</p>
+          <p>CIR 099001-AL-00035</p>
+          <p>CIN IT099001A1RDIBY5A4</p>
+        </div>
+      </div>
+
+      <div class="container footer-credits">
+        <div class="footer-bottom">© 2026 Hotel Pineta Bellaria Igea Marina</div>
+        <div class="footer-signature">
+          © 2026 Experience S.r.l. - Tous droits reserves | <a href="../admin/">Zone admin</a> | tanggo.pro | tanggo.software produit par <a href="https://www.cv.joomlu.com/" target="_blank" rel="noopener noreferrer">cv.joomlu.com</a>
+        </div>
+      </div>
+    </footer>
+
+    <a
+      class="floating-whatsapp"
+      href="https://wa.me/393388945536?text=Bonjour%2C%20je%20souhaite%20recevoir%20des%20informations%20sur%20un%20sejour%20a%20l%27Hotel%20Pineta."
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Ouvrir WhatsApp"
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M20.52 3.48A11.86 11.86 0 0 0 12.07 0C5.53 0 .2 5.33.2 11.87c0 2.1.55 4.15 1.6 5.96L0 24l6.37-1.67a11.83 11.83 0 0 0 5.7 1.46h.01c6.54 0 11.87-5.33 11.87-11.87 0-3.17-1.23-6.15-3.43-8.44Zm-8.45 18.3h-.01a9.8 9.8 0 0 1-4.99-1.37l-.36-.21-3.78.99 1.01-3.68-.23-.38a9.81 9.81 0 0 1-1.5-5.26c0-5.42 4.41-9.83 9.84-9.83 2.63 0 5.09 1.02 6.95 2.88a9.79 9.79 0 0 1 2.88 6.95c0 5.42-4.41 9.83-9.81 9.83Zm5.39-7.35c-.29-.14-1.74-.86-2.01-.95-.27-.1-.47-.14-.67.14-.19.29-.76.95-.92 1.15-.17.19-.34.22-.63.07-.29-.14-1.21-.45-2.31-1.44-.86-.77-1.44-1.72-1.61-2.01-.17-.29-.02-.45.13-.6.14-.14.29-.34.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.19 0-.5.07-.76.36-.26.29-.99.97-.99 2.38 0 1.41 1.01 2.77 1.15 2.96.14.19 2 3.05 4.84 4.27.68.29 1.21.46 1.63.59.68.22 1.29.19 1.78.12.54-.08 1.74-.71 1.98-1.39.24-.67.24-1.25.17-1.39-.07-.12-.26-.19-.55-.34Z"></path>
+      </svg>
+      <span>WhatsApp</span>
+    </a>
+
+    <script>
+      (function () {
+        var form = document.getElementById("fr-lead-form");
+        var statusBox = document.getElementById("fr-form-status");
+        var whatsappButton = document.getElementById("fr-send-whatsapp");
+        var submitButton = form ? form.querySelector('button[type="submit"]') : null;
+        var whatsappNumber = "393388945536";
+        var isSubmitting = false;
+
+        if (!form || !statusBox || !whatsappButton) return;
+
+        function buildMessage(data) {
+          return [
+            (data.get("tipo") || "Demande d'informations") + " - Hotel Pineta",
+            "",
+            "Nom: " + (data.get("nome") || ""),
+            "Telephone: " + (data.get("telefono") || ""),
+            "Email: " + (data.get("email") || ""),
+            "Contact prefere: " + (data.get("contattoPreferito") || ""),
+            "Arrivee: " + (data.get("arrivo") || ""),
+            "Depart: " + (data.get("partenza") || ""),
+            "Formule: " + (data.get("trattamento") || ""),
+            "Message: " + (data.get("messaggio") || "")
+          ].join("\n");
+        }
+
+        function buildPayload(channel) {
+          var data = new FormData(form);
+          return {
+            channel: channel,
+            tipo: (data.get("tipo") || "").toString(),
+            nome: (data.get("nome") || "").toString(),
+            telefono: (data.get("telefono") || "").toString(),
+            email: (data.get("email") || "").toString(),
+            arrivo: (data.get("arrivo") || "").toString(),
+            partenza: (data.get("partenza") || "").toString(),
+            trattamento: (data.get("trattamento") || "").toString(),
+            camere: "",
+            sistemazione: "",
+            contattoPreferito: (data.get("contattoPreferito") || "").toString(),
+            orarioContatto: "",
+            messaggio: (data.get("messaggio") || "").toString(),
+            composizioneCamere: "",
+            rawMessage: buildMessage(data)
+          };
+        }
+
+        function setSubmitState(loading) {
+          isSubmitting = loading;
+          if (submitButton) submitButton.disabled = loading;
+          if (whatsappButton) whatsappButton.disabled = loading;
+        }
+
+        async function submitLead(channel) {
+          var response = await fetch("../lead-submit.php", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json"
+            },
+            body: JSON.stringify(buildPayload(channel))
+          });
+
+          var payload = {};
+
+          try {
+            payload = await response.json();
+          } catch (error) {
+            payload = {};
+          }
+
+          if (!response.ok || !payload.ok) {
+            throw new Error(payload.error || "Envoi impossible. Verifiez la configuration du serveur.");
+          }
+
+          return payload;
+        }
+
+        function validateForm() {
+          if (!form.reportValidity()) {
+            statusBox.textContent = "Merci de remplir au minimum le nom, le telephone et l'email.";
+            return false;
+          }
+
+          statusBox.textContent = "";
+          return true;
+        }
+
+        form.addEventListener("submit", async function (event) {
+          event.preventDefault();
+          if (isSubmitting || !validateForm()) return;
+
+          setSubmitState(true);
+          statusBox.textContent = "Envoi de votre demande en cours...";
+
+          try {
+            await submitLead("email");
+            statusBox.textContent = "Demande envoyee a l'hotel, a l'adresse principale et au CRM.";
+          } catch (error) {
+            statusBox.textContent = error instanceof Error
+              ? error.message
+              : "Envoi impossible. Essayez depuis le site en ligne.";
+          } finally {
+            setSubmitState(false);
+          }
+        });
+
+        whatsappButton.addEventListener("click", async function () {
+          if (isSubmitting || !validateForm()) return;
+
+          setSubmitState(true);
+          statusBox.textContent = "Preparation de votre demande et ouverture de WhatsApp...";
+
+          try {
+            await submitLead("whatsapp");
+            var message = encodeURIComponent(buildMessage(new FormData(form)));
+            window.open("https://wa.me/" + whatsappNumber + "?text=" + message, "_blank", "noopener");
+            statusBox.textContent = "Demande enregistree dans le CRM et envoyee par email. WhatsApp s'ouvre avec le message pret.";
+          } catch (error) {
+            statusBox.textContent = error instanceof Error
+              ? error.message
+              : "Operation impossible. Essayez depuis le site en ligne.";
+          } finally {
+            setSubmitState(false);
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pineta CRM Admin</title>
+  <style>
+    :root {
+      --bg: #f8f5ef;
+      --paper: #ffffff;
+      --text: #2a2522;
+      --muted: #7a6f67;
+      --line: #e9dfd2;
+      --gold: #b88439;
+      --gold-soft: #e8d5b6;
+      --ok: #2f8f53;
+      --warn: #b88439;
+      --info: #3570a8;
+      --danger: #b43c3c;
+      --radius: 14px;
+      --shadow: 0 14px 40px rgba(58, 44, 33, 0.14);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: radial-gradient(circle at 10% 0%, #fff8ef 0%, var(--bg) 45%, #efe7db 100%);
+      color: var(--text);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      min-height: 100vh;
+    }
+
+    .wrap {
+      width: min(1120px, calc(100% - 32px));
+      margin: 24px auto 42px;
+    }
+
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .login {
+      max-width: 420px;
+      margin: 52px auto;
+      padding: 26px;
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 2rem;
+      line-height: 1.1;
+    }
+
+    .sub {
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .field { margin-bottom: 12px; }
+    .field label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .field input {
+      width: 100%;
+      padding: 11px 12px;
+      border: 1px solid #d9cdbf;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      background: #fff;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 10px;
+      padding: 11px 14px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #9f6a28, var(--gold));
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(184, 132, 57, 0.36);
+    }
+
+    .btn-ghost {
+      background: #f3ece3;
+      color: #5f4a34;
+      border: 1px solid #e2d5c6;
+    }
+
+    .status {
+      min-height: 22px;
+      margin-top: 8px;
+      color: var(--danger);
+      font-size: 0.85rem;
+    }
+
+    .crm-head {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .crm-title {
+      margin: 0;
+      font-size: 1.3rem;
+      font-family: "Cormorant Garamond", Georgia, serif;
+    }
+
+    .crm-meta {
+      color: var(--muted);
+      font-size: 0.86rem;
+      margin-top: 4px;
+    }
+
+    .crm-tools {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--line);
+      align-items: center;
+    }
+
+    .crm-tools select,
+    .crm-tools input {
+      padding: 9px 10px;
+      border: 1px solid #dacdbc;
+      border-radius: 9px;
+      font-size: 0.9rem;
+      background: #fff;
+    }
+
+    .table-wrap {
+      overflow: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 980px;
+    }
+
+    th, td {
+      padding: 10px 12px;
+      border-bottom: 1px solid #f0e6d9;
+      vertical-align: top;
+      text-align: left;
+      font-size: 0.87rem;
+    }
+
+    th {
+      background: #fcf9f3;
+      color: #6f6255;
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .badge {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 3px 9px;
+      font-size: 0.73rem;
+      font-weight: 700;
+      border: 1px solid transparent;
+    }
+
+    .s-nuova { color: #785313; background: #fff0d4; border-color: #eec47c; }
+    .s-vista { color: #1f5c8d; background: #dcedfb; border-color: #9ec5e8; }
+    .s-risposta { color: #1f6a3b; background: #dbf4e4; border-color: #95d9af; }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .mini {
+      border: 1px solid #dfd2c1;
+      background: #fff;
+      color: #65513c;
+      border-radius: 8px;
+      padding: 5px 8px;
+      font-size: 0.76rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .mini.danger {
+      border-color: #e9b7b7;
+      color: #9f2f2f;
+      background: #fff5f5;
+    }
+
+    .empty {
+      padding: 24px;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    @media (max-width: 900px) {
+      .wrap { width: calc(100% - 18px); }
+      .crm-head { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section id="loginBox" class="card login">
+      <h1>Accesso Admin</h1>
+      <p class="sub">Mini CRM richieste Hotel Pineta</p>
+      <form id="loginForm" autocomplete="off">
+        <div class="field">
+          <label for="username">Utente</label>
+          <input id="username" name="username" type="text" required />
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" required />
+        </div>
+        <button class="btn btn-primary" type="submit">Entra</button>
+        <div class="status" id="loginStatus" aria-live="polite"></div>
+      </form>
+    </section>
+
+    <section id="crmBox" class="card" hidden>
+      <header class="crm-head">
+        <div>
+          <h2 class="crm-title">Elenco richieste</h2>
+          <div class="crm-meta" id="crmMeta">0 richieste</div>
+        </div>
+        <button class="btn btn-ghost" id="logoutBtn" type="button">Esci</button>
+      </header>
+
+      <div class="crm-tools">
+        <select id="statusFilter">
+          <option value="all">Tutti gli stati</option>
+          <option value="nuova">Solo nuove</option>
+          <option value="vista">Solo viste</option>
+          <option value="risposta">Solo risposte</option>
+        </select>
+        <input id="searchInput" type="search" placeholder="Cerca nome, telefono o email" />
+        <button class="btn btn-ghost" id="clearAllBtn" type="button">Svuota elenco</button>
+      </div>
+
+      <div class="table-wrap" id="tableWrap"></div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      var loginBox = document.getElementById("loginBox");
+      var crmBox = document.getElementById("crmBox");
+      var loginForm = document.getElementById("loginForm");
+      var loginStatus = document.getElementById("loginStatus");
+      var crmMeta = document.getElementById("crmMeta");
+      var tableWrap = document.getElementById("tableWrap");
+      var logoutBtn = document.getElementById("logoutBtn");
+      var statusFilter = document.getElementById("statusFilter");
+      var searchInput = document.getElementById("searchInput");
+      var clearAllBtn = document.getElementById("clearAllBtn");
+      var allRequests = [];
+
+      function apiUrl(action) {
+        return "api.php?action=" + encodeURIComponent(action);
+      }
+
+      async function apiRequest(action, payload) {
+        var options = {
+          headers: {
+            Accept: "application/json"
+          },
+          credentials: "same-origin"
+        };
+
+        if (payload) {
+          options.method = "POST";
+          options.headers["Content-Type"] = "application/json";
+          options.body = JSON.stringify(payload);
+        }
+
+        var response = await fetch(apiUrl(action), options);
+        var data = {};
+
+        try {
+          data = await response.json();
+        } catch (error) {
+          data = {};
+        }
+
+        if (!response.ok || !data.ok) {
+          throw new Error(data.error || "Operazione CRM non riuscita.");
+        }
+
+        return data;
+      }
+
+      function statusBadge(status) {
+        if (status === "vista") return '<span class="badge s-vista">vista</span>';
+        if (status === "risposta") return '<span class="badge s-risposta">risposta</span>';
+        return '<span class="badge s-nuova">nuova</span>';
+      }
+
+      function esc(text) {
+        return String(text || "")
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/\"/g, "&quot;")
+          .replace(/'/g, "&#39;");
+      }
+
+      function fmtDate(iso) {
+        if (!iso) return "-";
+        var d = new Date(iso);
+        if (Number.isNaN(d.getTime())) return "-";
+        return d.toLocaleString("it-IT", { dateStyle: "short", timeStyle: "short" });
+      }
+
+      function getFiltered(items) {
+        var selected = statusFilter.value;
+        var q = searchInput.value.trim().toLowerCase();
+        return items.filter(function (r) {
+          var okStatus = selected === "all" || r.status === selected;
+          if (!okStatus) return false;
+          if (!q) return true;
+          var blob = [r.nome, r.telefono, r.email, r.messaggio].join(" ").toLowerCase();
+          return blob.indexOf(q) !== -1;
+        });
+      }
+
+      function render() {
+        var items = getFiltered(allRequests);
+        crmMeta.textContent = allRequests.length + " richieste totali · " + items.length + " visibili";
+
+        if (!items.length) {
+          tableWrap.innerHTML = '<div class="empty">Nessuna richiesta da mostrare.</div>';
+          return;
+        }
+
+        var rows = items.map(function (r) {
+          return [
+            "<tr>",
+            "<td>" + fmtDate(r.createdAt) + "</td>",
+            "<td><strong>" + esc(r.nome) + "</strong><br><small>" + esc(r.telefono) + "</small></td>",
+            "<td>" + esc(r.email || "-") + "</td>",
+            "<td>" + esc((r.arrivo || "-") + " → " + (r.partenza || "-")) + "</td>",
+            "<td>" + esc(r.channel || "-") + "</td>",
+            "<td>" + statusBadge(r.status) + "</td>",
+            "<td><small>" + esc(r.tipo || "-") + "<br>" + esc(r.trattamento || "-") + "</small></td>",
+            "<td class='actions'>",
+            "<button class='mini' data-action='vista' data-id='" + esc(r.id) + "'>Segna vista</button>",
+            "<button class='mini' data-action='risposta' data-id='" + esc(r.id) + "'>Segna risposta</button>",
+            "<button class='mini danger' data-action='delete' data-id='" + esc(r.id) + "'>Elimina</button>",
+            "</td>",
+            "</tr>"
+          ].join("");
+        }).join("");
+
+        tableWrap.innerHTML = [
+          "<table>",
+          "<thead><tr>",
+          "<th>Data</th><th>Contatto</th><th>Email</th><th>Soggiorno</th><th>Canale</th><th>Stato</th><th>Dettagli</th><th>Azioni</th>",
+          "</tr></thead>",
+          "<tbody>",
+          rows,
+          "</tbody></table>"
+        ].join("");
+      }
+
+      async function loadRequests() {
+        var data = await apiRequest("list");
+        allRequests = Array.isArray(data.items) ? data.items : [];
+        render();
+      }
+
+      async function setStatus(id, status) {
+        await apiRequest("update", {
+          id: id,
+          status: status
+        });
+        await loadRequests();
+      }
+
+      async function deleteOne(id) {
+        await apiRequest("delete", { id: id });
+        await loadRequests();
+      }
+
+      function showCrm() {
+        loginBox.hidden = true;
+        crmBox.hidden = false;
+      }
+
+      function showLogin() {
+        crmBox.hidden = true;
+        loginBox.hidden = false;
+      }
+
+      loginForm.addEventListener("submit", async function (event) {
+        event.preventDefault();
+        loginStatus.textContent = "Accesso in corso...";
+        var user = document.getElementById("username").value.trim();
+        var pass = document.getElementById("password").value;
+
+        try {
+          await apiRequest("login", {
+            username: user,
+            password: pass
+          });
+          loginStatus.textContent = "";
+          showCrm();
+          await loadRequests();
+          return;
+        } catch (error) {
+          loginStatus.textContent = error instanceof Error ? error.message : "Credenziali non valide.";
+        }
+      });
+
+      logoutBtn.addEventListener("click", async function () {
+        try {
+          await apiRequest("logout", {});
+        } catch (error) {
+          // Anche se il logout server-side fallisce, riporto alla schermata iniziale.
+        }
+        showLogin();
+        loginForm.reset();
+        allRequests = [];
+        tableWrap.innerHTML = "";
+        crmMeta.textContent = "0 richieste";
+      });
+
+      statusFilter.addEventListener("change", render);
+      searchInput.addEventListener("input", render);
+
+      clearAllBtn.addEventListener("click", async function () {
+        if (!confirm("Vuoi eliminare tutte le richieste salvate?")) return;
+        try {
+          await apiRequest("clear", {});
+          await loadRequests();
+        } catch (error) {
+          crmMeta.textContent = error instanceof Error ? error.message : "Errore durante lo svuotamento del CRM.";
+        }
+      });
+
+      tableWrap.addEventListener("click", async function (event) {
+        var target = event.target;
+        if (!(target instanceof HTMLElement)) return;
+        var action = target.getAttribute("data-action");
+        var id = target.getAttribute("data-id");
+        if (!action || !id) return;
+
+        try {
+          if (action === "vista") await setStatus(id, "vista");
+          if (action === "risposta") await setStatus(id, "risposta");
+          if (action === "delete") await deleteOne(id);
+        } catch (error) {
+          crmMeta.textContent = error instanceof Error ? error.message : "Operazione non riuscita.";
+        }
+      });
+
+      async function bootstrap() {
+        try {
+          var session = await apiRequest("session");
+          if (session.authenticated) {
+            showCrm();
+            allRequests = Array.isArray(session.items) ? session.items : [];
+            render();
+            return;
+          }
+        } catch (error) {
+          loginStatus.textContent = error instanceof Error ? error.message : "";
+        }
+
+        showLogin();
+      }
+
+      bootstrap();
+    })();
+  </script>
+</body>
+</html>

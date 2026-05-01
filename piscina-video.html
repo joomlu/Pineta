@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18127184057"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-18127184057');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Piscina Hotel Pineta - Video</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --bg: #f4efe8;
+      --paper: #fbf8f3;
+      --text: #29231e;
+      --muted: #74685c;
+      --gold: #d3b07a;
+      --shadow-xl: 0 30px 80px rgba(25, 18, 14, 0.16);
+      --radius-xl: 36px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Inter", Arial, sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #f7f1eb 0%, #f6f0e8 35%, #f2ebe3 100%);
+      min-height: 100vh;
+    }
+
+    .page-wrap {
+      width: min(1220px, calc(100vw - 32px));
+      margin: 0 auto;
+      padding: 60px 0;
+    }
+
+    .video-hero {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .video-hero h1 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 2.8rem;
+      margin: 0 0 12px;
+      color: var(--text);
+      line-height: 1.1;
+    }
+
+    .video-hero p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      max-width: 920px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-xl);
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+    }
+
+    .video-container iframe,
+    .video-container video {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    .video-description {
+      max-width: 720px;
+      margin: 60px auto;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 24px;
+      border: 1px solid rgba(23, 18, 16, 0.06);
+    }
+
+    .video-description h2 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.8rem;
+      margin: 0 0 16px;
+      color: var(--text);
+    }
+
+    .video-description p {
+      line-height: 1.75;
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+
+    .back-link {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .back-link a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: var(--gold);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 700;
+      transition: opacity 0.3s;
+    }
+
+    .back-link a:hover {
+      opacity: 0.9;
+    }
+
+    @media (max-width: 900px) {
+      .page-wrap { padding: 40px 20px; }
+      .video-hero h1 { font-size: 2rem; }
+      .video-container { margin: 30px 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrap">
+    <div class="video-hero">
+      <h1>Piscina Hotel Pineta</h1>
+      <p>Mettiti comodo e tuffati in piscina con noi</p>
+    </div>
+
+    <div class="video-container">
+      <!-- Video da hotel pineta o placeholder se non disponibile -->
+      <iframe
+        title="Piscina Hotel Pineta Bellaria Igea Marina"
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <div class="video-description">
+      <h2>Rilassati con noi</h2>
+      <p>
+        La piscina riscaldata dell'Hotel Pineta è il luogo perfetto per rigenerarti durante il tuo soggiorno a Bellaria Igea Marina.
+      </p>
+      <p>
+        Con otto postazioni idromassaggio, geyser, lama cervicale e un elegante solarium con lettini e ombrelloni, 
+        troverai tutto ciò che serve per un completo relax in qualsiasi momento della giornata.
+      </p>
+      <p>
+        Dopo una giornata al mare o in attesa del pranzo, scegli di passare il tuo tempo nella nostra oasi d'acqua calda e benessere.
+      </p>
+    </div>
+
+    <div class="back-link">
+      <a href="/">← Torna alla home</a>
+    </div>
+  </div>
+</body>
+</html>
