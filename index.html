@@ -2367,6 +2367,22 @@
         return payload;
       }
 
+      function trackGoogleAdsConversion(transactionId) {
+        if (typeof window.gtag !== "function") return;
+
+        const payload = {
+          send_to: "AW-18127184057/TdOyCJeE1qQcELnB28ND",
+          value: 1.0,
+          currency: "EUR"
+        };
+
+        if (transactionId) {
+          payload.transaction_id = transactionId;
+        }
+
+        window.gtag("event", "conversion", payload);
+      }
+
       function validateForm() {
         if (!form.reportValidity()) {
           statusBox.textContent = "Compila i campi obbligatori prima di inviare la richiesta.";
@@ -2413,7 +2429,8 @@
         statusBox.textContent = "Invio della richiesta in corso...";
 
         try {
-          await submitLead("email");
+          const result = await submitLead("email");
+          trackGoogleAdsConversion(result.id);
           statusBox.textContent = "Richiesta inviata correttamente a info@hotelpineta.bellariaigeamarina.info, info@h-pineta.com e salvata nel CRM.";
         } catch (error) {
           statusBox.textContent = error instanceof Error
@@ -2431,7 +2448,8 @@
         statusBox.textContent = "Salvataggio della richiesta e apertura WhatsApp in corso...";
 
         try {
-          await submitLead("whatsapp");
+          const result = await submitLead("whatsapp");
+          trackGoogleAdsConversion(result.id);
           const message = encodeURIComponent(formDataToMessage());
           window.open("https://wa.me/" + whatsappNumber + "?text=" + message, "_blank", "noopener");
           statusBox.textContent = "Richiesta salvata nel CRM e inviata via email. Si sta aprendo WhatsApp con il messaggio pronto.";

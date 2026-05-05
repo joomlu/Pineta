@@ -1123,6 +1123,22 @@
           return payload;
         }
 
+        function trackGoogleAdsConversion(transactionId) {
+          if (typeof window.gtag !== "function") return;
+
+          var payload = {
+            send_to: "AW-18127184057/TdOyCJeE1qQcELnB28ND",
+            value: 1.0,
+            currency: "EUR"
+          };
+
+          if (transactionId) {
+            payload.transaction_id = transactionId;
+          }
+
+          window.gtag("event", "conversion", payload);
+        }
+
         function validateForm() {
           if (!form.reportValidity()) {
             statusBox.textContent = "Merci de remplir au minimum le nom, le telephone et l'email.";
@@ -1141,7 +1157,8 @@
           statusBox.textContent = "Envoi de votre demande en cours...";
 
           try {
-            await submitLead("email");
+            var result = await submitLead("email");
+            trackGoogleAdsConversion(result.id);
             statusBox.textContent = "Demande envoyee a l'hotel, a l'adresse principale et au CRM.";
           } catch (error) {
             statusBox.textContent = error instanceof Error
@@ -1159,7 +1176,8 @@
           statusBox.textContent = "Preparation de votre demande et ouverture de WhatsApp...";
 
           try {
-            await submitLead("whatsapp");
+            var result = await submitLead("whatsapp");
+            trackGoogleAdsConversion(result.id);
             var message = encodeURIComponent(buildMessage(new FormData(form)));
             window.open("https://wa.me/" + whatsappNumber + "?text=" + message, "_blank", "noopener");
             statusBox.textContent = "Demande enregistree dans le CRM et envoyee par email. WhatsApp s'ouvre avec le message pret.";
