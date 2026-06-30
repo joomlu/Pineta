@@ -159,6 +159,101 @@ function pineta_send_smtp_mail(string $subject, string $body, array $replyTo = [
     $config = pineta_config();
     $smtp = $config['smtp'];
     $recipients = $config['lead_recipients'];
+    $timeout = max(5, (int) ($smtp['timeout'] ?? 15));
+    $attempts = pineta_smtp_attempts($smtp);
+
+    if (function_exists('set_time_limit')) {
+        @set_time_limit(($timeout * count($attempts)) + 5);
+    }
+
+    $errors = [];
+
+    foreach ($attempts as $attempt) {
+        $socket = null;
+        set_error_handler(static function (int $severity, string $message): never {
+            throw new RuntimeException($message);
+        });
+
+        try {
+            $socket = pineta_smtp_connect($attempt, $timeout);
+            pineta_smtp_expect($socket, [220]);
+            pineta_smtp_handshake($socket, $attempt);
+            pineta_smtp_command($socket, 'AUTH LOGIN', [334]);
+            pineta_smtp_command($socket, base64_encode($smtp['username']), [334]);
+            pineta_smtp_command($socket, base64_encode($smtp['password']), [235]);
+            pineta_smtp_command($socket, 'MAIL FROM:<' . $smtp['from_email'] . '>', [250]);
+
+            foreach ($recipients as $recipient) {
+                pineta_smtp_command($socket, 'RCPT TO:<' . $recipient . '>', [250, 251]);
+            }
+
+            pineta_smtp_command($socket, 'DATA', [354]);
+
+            $headers = [
+                'Date: ' . date(DATE_RFC2822),
+                'From: ' . pineta_format_from($smtp['from_name'], $smtp['from_email']),
+                'To: ' . implode(', ', $recipients),
+                'Subject: ' . pineta_encode_header($subject),
+                'MIME-Version: 1.0',
+                'Content-Type: text/plain; charset=UTF-8',
+                'Content-Transfer-Encoding: 8bit',
+                'Message-ID: <' . uniqid('pineta-', true) . '@' . $attempt['host'] . '>',
+                'X-Mailer: Hotel Pineta Lead Handler',
+            ];
+
+            if (!empty($replyTo['email']) && filter_var($replyTo['email'], FILTER_VALIDATE_EMAIL)) {
+                $headers[] = 'Reply-To: ' . pineta_format_from($replyTo['name'] ?? '', $replyTo['email']);
+            }
+
+            $message = implode("\r\n", $headers) . "\r\n\r\n" . pineta_dot_stuff($body) . "\r\n.";
+            pineta_smtp_command($socket, $message, [250]);
+            pineta_smtp_command($socket, 'QUIT', [221]);
+            return;
+        } catch (Throwable $error) {
+            $errors[] = sprintf(
+                '%s:%d/%s - %s',
+                $attempt['host'],
+                (int) $attempt['port'],
+                $attempt['security'],
+                $error->getMessage()
+            );
+        } finally {
+            restore_error_handler();
+
+            if (is_resource($socket)) {
+                fclose($socket);
+            }
+        }
+    }
+
+    throw new RuntimeException(implode(' | ', $errors));
+}
+
+function pineta_smtp_attempts(array $smtp): array
+{
+    $attempts = $smtp['attempts'] ?? [];
+    if (is_array($attempts) && $attempts !== []) {
+        return array_values(array_filter($attempts, static function ($attempt): bool {
+            return is_array($attempt)
+                && !empty($attempt['host'])
+                && !empty($attempt['port'])
+                && !empty($attempt['security']);
+        }));
+    }
+
+    return [[
+        'host' => (string) ($smtp['host'] ?? ''),
+        'port' => (int) ($smtp['port'] ?? 465),
+        'security' => (string) ($smtp['security'] ?? 'ssl'),
+    ]];
+}
+
+function pineta_smtp_connect(array $attempt, int $timeout)
+{
+    $security = strtolower((string) ($attempt['security'] ?? 'ssl'));
+    $host = (string) ($attempt['host'] ?? '');
+    $port = (int) ($attempt['port'] ?? 0);
+    $transport = $security === 'ssl' ? 'ssl://' : 'tcp://';
 
     $context = stream_context_create([
         'ssl' => [
@@ -169,10 +264,10 @@ function pineta_send_smtp_mail(string $subject, string $body, array $replyTo = [
     ]);
 
     $socket = stream_socket_client(
-        'ssl://' . $smtp['host'] . ':' . $smtp['port'],
+        $transport . $host . ':' . $port,
         $errno,
         $errstr,
-        (float) $smtp['timeout'],
+        (float) $timeout,
         STREAM_CLIENT_CONNECT,
         $context
     );
@@ -181,44 +276,28 @@ function pineta_send_smtp_mail(string $subject, string $body, array $replyTo = [
         throw new RuntimeException('Connessione SMTP non riuscita: ' . $errstr);
     }
 
-    stream_set_timeout($socket, (int) $smtp['timeout']);
+    stream_set_timeout($socket, $timeout);
+    return $socket;
+}
 
-    try {
-        pineta_smtp_expect($socket, [220]);
-        pineta_smtp_command($socket, 'EHLO hotelpineta.bellariaigeamarina.info', [250]);
-        pineta_smtp_command($socket, 'AUTH LOGIN', [334]);
-        pineta_smtp_command($socket, base64_encode($smtp['username']), [334]);
-        pineta_smtp_command($socket, base64_encode($smtp['password']), [235]);
-        pineta_smtp_command($socket, 'MAIL FROM:<' . $smtp['from_email'] . '>', [250]);
+function pineta_smtp_handshake($socket, array $attempt): void
+{
+    $host = (string) ($attempt['host'] ?? 'localhost');
+    $security = strtolower((string) ($attempt['security'] ?? 'ssl'));
 
-        foreach ($recipients as $recipient) {
-            pineta_smtp_command($socket, 'RCPT TO:<' . $recipient . '>', [250, 251]);
-        }
+    pineta_smtp_command($socket, 'EHLO ' . $host, [250]);
 
-        pineta_smtp_command($socket, 'DATA', [354]);
-
-        $headers = [
-            'Date: ' . date(DATE_RFC2822),
-            'From: ' . pineta_format_from($smtp['from_name'], $smtp['from_email']),
-            'To: ' . implode(', ', $recipients),
-            'Subject: ' . pineta_encode_header($subject),
-            'MIME-Version: 1.0',
-            'Content-Type: text/plain; charset=UTF-8',
-            'Content-Transfer-Encoding: 8bit',
-            'Message-ID: <' . uniqid('pineta-', true) . '@' . $smtp['host'] . '>',
-            'X-Mailer: Hotel Pineta Lead Handler',
-        ];
-
-        if (!empty($replyTo['email']) && filter_var($replyTo['email'], FILTER_VALIDATE_EMAIL)) {
-            $headers[] = 'Reply-To: ' . pineta_format_from($replyTo['name'] ?? '', $replyTo['email']);
-        }
-
-        $message = implode("\r\n", $headers) . "\r\n\r\n" . pineta_dot_stuff($body) . "\r\n.";
-        pineta_smtp_command($socket, $message, [250]);
-        pineta_smtp_command($socket, 'QUIT', [221]);
-    } finally {
-        fclose($socket);
+    if ($security !== 'tls') {
+        return;
     }
+
+    pineta_smtp_command($socket, 'STARTTLS', [220]);
+    $cryptoEnabled = stream_socket_enable_crypto($socket, true, STREAM_CRYPTO_METHOD_TLS_CLIENT);
+    if ($cryptoEnabled !== true) {
+        throw new RuntimeException('Impossibile attivare STARTTLS.');
+    }
+
+    pineta_smtp_command($socket, 'EHLO ' . $host, [250]);
 }
 
 function pineta_smtp_command($socket, string $command, array $expectedCodes): string

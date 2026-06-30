@@ -264,6 +264,7 @@
         text-align: left;
         display: grid;
         grid-template-columns: minmax(0, 1fr) 360px;
+        grid-template-rows: auto auto;
         gap: 28px;
         align-items: start;
       }
@@ -315,6 +316,54 @@
 
       .hero h1 span { color: #f2d8b0; }
 
+      .hero-offer-cocard {
+        display: inline-grid;
+        grid-column: 1;
+        gap: 8px;
+        margin-top: 8px;
+        padding: 24px 26px;
+        border-radius: 32px;
+        background:
+          radial-gradient(circle at top right, rgba(255,255,255,0.34), transparent 30%),
+          linear-gradient(135deg, rgba(206, 126, 126, 0.99), rgba(155, 91, 91, 0.99));
+        color: #fff;
+        box-shadow: 0 24px 46px rgba(86, 42, 42, 0.3);
+        border: 1px solid rgba(255,255,255,0.24);
+        max-width: 430px;
+      }
+
+      .hero-offer-cocard:hover {
+        transform: translateY(-2px);
+      }
+
+      .hero-offer-cocard small {
+        display: inline-flex;
+        align-items: center;
+        justify-self: start;
+        min-height: 30px;
+        padding: 0 12px;
+        border-radius: 999px;
+        background: rgba(255,255,255,0.18);
+        text-transform: uppercase;
+        letter-spacing: 0.22em;
+        font-size: 0.7rem;
+        font-weight: 800;
+        opacity: 0.96;
+      }
+
+      .hero-offer-cocard strong {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 2.1rem;
+        line-height: 0.95;
+        letter-spacing: -0.03em;
+      }
+
+      .hero-offer-cocard span {
+        font-size: 1rem;
+        line-height: 1.35;
+        color: rgba(255,255,255,0.92);
+      }
+
       .hero-lead {
         max-width: 100%;
         margin: 0 0 24px;
@@ -324,6 +373,8 @@
       }
 
       .hero-pillars {
+        grid-column: 2;
+        grid-row: 1 / span 2;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -1506,6 +1557,13 @@
           margin: 24px 0 0;
         }
 
+        .hero-offer-cocard {
+          display: grid;
+          max-width: none;
+          width: 100%;
+          margin-top: 18px;
+        }
+
         .hero-pillars .chip {
           min-height: 0;
           padding: 18px 18px;
@@ -1624,6 +1682,12 @@
                 Il fascino del mare, <br />
                 <span>con un’anima più esclusiva</span>
               </h1>
+
+              <a class="hero-offer-cocard" href="offerta/index.html">
+                <small>Nuova offerta</small>
+                <strong>7 notti</strong>
+                <span>dal 19/07 al 26/07 · a partire da €515</span>
+              </a>
 
               <div class="hero-pillars">
                 <div class="chip">

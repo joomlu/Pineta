@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18127184057"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-18127184057');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotel Pineta | Offre 7 Nuits du 19/07 au 26/07</title>
+    <meta
+      name="description"
+      content="Offre Hotel Pineta Bellaria Igea Marina : 7 nuits du 19/07 au 26/07 a partir de 515 euros avec demi-pension, piscine avec hydromassage et chambres confort."
+    />
+    <style>
+      :root {
+        --sand: #f5ede2;
+        --sand-deep: #ead8c0;
+        --sea: #c88f90;
+        --sea-deep: #a46263;
+        --ink: #1f1b18;
+        --muted: #675d56;
+        --card: rgba(255, 255, 255, 0.92);
+        --line: rgba(31, 27, 24, 0.08);
+        --shadow: 0 24px 60px rgba(34, 25, 18, 0.12);
+        --radius-xl: 34px;
+        --radius-lg: 26px;
+        --maxw: 1180px;
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+
+      body {
+        margin: 0;
+        font-family: "Georgia", "Times New Roman", serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at top left, rgba(164, 98, 99, 0.16), transparent 38%),
+          radial-gradient(circle at top right, rgba(200, 143, 144, 0.12), transparent 28%),
+          linear-gradient(180deg, #fbf7f2 0%, #f4ebdf 100%);
+      }
+
+      img { display: block; max-width: 100%; }
+      a { color: inherit; text-decoration: none; }
+      .container { width: min(calc(100vw - 32px), var(--maxw)); margin: 0 auto; }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        backdrop-filter: blur(14px);
+        background: rgba(251, 247, 242, 0.8);
+        border-bottom: 1px solid rgba(31, 27, 24, 0.06);
+      }
+
+      .topbar-inner {
+        min-height: 82px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 20px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .brand img {
+        width: 58px;
+        height: 58px;
+        object-fit: contain;
+      }
+
+      .brand small,
+      .eyebrow {
+        display: block;
+        font-family: Arial, sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        font-size: 0.66rem;
+        color: var(--sea-deep);
+      }
+
+      .brand strong {
+        display: block;
+        font-size: 1.15rem;
+        line-height: 1;
+      }
+
+      .hero {
+        position: relative;
+        min-height: 78svh;
+        padding: 72px 0 72px;
+        isolation: isolate;
+      }
+
+      .hero-media {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+      }
+
+      .hero-media::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(110deg, rgba(22, 19, 18, 0.54) 10%, rgba(22, 19, 18, 0.22) 44%, rgba(22, 19, 18, 0.5) 100%),
+          linear-gradient(180deg, rgba(255,255,255,0.14) 0%, rgba(16,12,12,0.24) 100%);
+        z-index: 1;
+      }
+
+      .hero-bg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .offer-grid {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
+        gap: 26px;
+        align-items: end;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        min-height: 48px;
+        padding: 0 20px;
+        border-radius: 999px;
+        border: 1px solid transparent;
+        font-family: Arial, sans-serif;
+        font-size: 0.93rem;
+        font-weight: 700;
+        transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+      }
+
+      .btn:hover { transform: translateY(-2px); }
+
+      .btn-primary {
+        background: #A46263;
+        color: #fff;
+        box-shadow: 0 16px 30px rgba(164, 98, 99, 0.28);
+      }
+
+      .offer-card {
+        background: var(--card);
+        border: 1px solid rgba(255,255,255,0.16);
+        border-radius: var(--radius-xl);
+        box-shadow: var(--shadow);
+        padding: 30px;
+        color: var(--ink);
+      }
+
+      .offer-card small {
+        display: block;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: var(--sea-deep);
+        font-family: Arial, sans-serif;
+        font-size: 0.7rem;
+        font-weight: 800;
+      }
+
+      .offer-card h2 {
+        margin: 12px 0 0;
+        font-size: clamp(2.4rem, 4vw, 3.6rem);
+        line-height: 0.92;
+      }
+
+      .offer-price {
+        margin-top: 18px;
+        padding: 18px 20px;
+        border-radius: 24px;
+        background: linear-gradient(135deg, rgba(200, 143, 144, 0.18), rgba(164, 98, 99, 0.14));
+      }
+
+      .offer-price span {
+        display: block;
+        color: var(--muted);
+        font-family: Arial, sans-serif;
+        font-size: 0.9rem;
+      }
+
+      .offer-price strong {
+        display: block;
+        margin-top: 4px;
+        font-size: clamp(2.4rem, 4vw, 3.5rem);
+        line-height: 1;
+        color: var(--sea-deep);
+      }
+
+      .offer-card ul {
+        margin: 22px 0 0;
+        padding-left: 18px;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+
+      .offer-card li + li {
+        margin-top: 8px;
+      }
+
+      .offer-card .btn {
+        margin-top: 24px;
+      }
+
+      .section {
+        padding: 74px 0;
+      }
+
+      .section-head {
+        display: grid;
+        gap: 10px;
+        margin-bottom: 26px;
+      }
+
+      .section-head h2 {
+        font-size: clamp(2rem, 4vw, 3.2rem);
+        line-height: 0.95;
+      }
+
+      .service-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .service-card {
+        border-radius: var(--radius-lg);
+        background: var(--card);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+        padding: 24px;
+        display: grid;
+        gap: 10px;
+      }
+
+      .service-card small {
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        font-size: 0.68rem;
+        font-family: Arial, sans-serif;
+        font-weight: 800;
+        color: var(--sea-deep);
+      }
+
+      .service-card h3 {
+        font-size: 1.15rem;
+        line-height: 1.3;
+      }
+
+      .service-card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.7;
+        font-size: 0.98rem;
+      }
+
+      .detail-panel {
+        border-radius: var(--radius-lg);
+        background: var(--card);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+        padding: 30px;
+      }
+
+      .detail-panel small {
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        font-size: 0.68rem;
+        font-family: Arial, sans-serif;
+        font-weight: 800;
+        color: var(--sea-deep);
+      }
+
+      .detail-panel h3 {
+        margin: 10px 0 14px;
+        font-size: 1.4rem;
+      }
+
+      .detail-panel p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.85;
+        font-size: 0.98rem;
+      }
+
+      .footer {
+        margin-top: 24px;
+        padding: 34px 0 44px;
+        background: #171312;
+        color: rgba(255,255,255,0.8);
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.2fr) repeat(3, minmax(0, 0.9fr));
+        gap: 32px;
+        align-items: start;
+      }
+
+      .footer-brand {
+        display: grid;
+        gap: 10px;
+        justify-items: start;
+      }
+
+      .footer-brand-link {
+        display: inline-grid;
+        gap: 10px;
+        color: #fff;
+      }
+
+      .footer-brand img {
+        width: 120px;
+        height: auto;
+        object-fit: contain;
+        margin-bottom: 10px;
+      }
+
+      .footer-copy,
+      .footer-col a,
+      .footer-col p,
+      .footer-bottom,
+      .footer-signature {
+        font-family: Arial, sans-serif;
+        font-size: 0.92rem;
+        line-height: 1.72;
+      }
+
+      .footer-copy,
+      .footer-col a,
+      .footer-col p,
+      .footer-bottom,
+      .footer-signature,
+      .footer-signature a {
+        color: rgba(255,255,255,0.8);
+      }
+
+      .footer-col {
+        display: grid;
+        gap: 6px;
+      }
+
+      .footer-col h4 {
+        margin: 0 0 6px;
+        color: #fff;
+      }
+
+      .footer-col a:hover,
+      .footer-signature a:hover {
+        color: #fff;
+      }
+
+      .footer-credits {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        padding-top: 24px;
+        margin-top: 24px;
+        border-top: 1px solid rgba(255,255,255,0.08);
+      }
+
+      .floating-whatsapp {
+        position: fixed;
+        right: 18px;
+        bottom: 18px;
+        z-index: 60;
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: #A46263;
+        color: #fff;
+        box-shadow: 0 18px 34px rgba(164, 98, 99, 0.30);
+      }
+
+      .floating-whatsapp span { display: none; }
+      .floating-whatsapp svg { width: 30px; height: 30px; }
+
+      @media (max-width: 1080px) {
+        .offer-grid,
+        .service-grid,
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .topbar-inner,
+        .footer-credits {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .hero {
+          min-height: auto;
+          padding: 0 0 36px;
+        }
+
+        .hero-media {
+          position: relative;
+          inset: auto;
+          height: clamp(340px, 60vh, 520px);
+          overflow: hidden;
+          border-radius: 0 0 34px 34px;
+        }
+
+        .offer-grid {
+          margin-top: 18px;
+        }
+
+        .btn,
+        .floating-whatsapp {
+          width: 100%;
+        }
+
+        .floating-whatsapp {
+          width: 58px;
+          height: 58px;
+          right: 14px;
+          bottom: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <a class="brand" href="https://www.h-pineta.com/fr/" target="_blank" rel="noopener noreferrer" aria-label="Site officiel Hotel Pineta en francais">
+          <img src="../../immagine/logo-hotel-pineta-rosso.png" alt="Logo Hotel Pineta" />
+          <div>
+            <small>Bellaria Igea Marina</small>
+            <strong>Hotel Pineta</strong>
+          </div>
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-media" aria-hidden="true">
+          <img class="hero-bg" src="../../fr/pdf-assets/page04-02.jpg" alt="" />
+        </div>
+
+        <div class="container offer-grid">
+          <div></div>
+
+          <aside class="offer-card">
+            <small>A partir de</small>
+            <h2>7 nuits</h2>
+            <div class="offer-price">
+              <span>Offre du 19/07 au 26/07</span>
+              <strong>de €515</strong>
+            </div>
+            <ul>
+              <li>Piscine avec hydromassage</li>
+              <li>Demi-pension</li>
+              <li>Petit-dejeuner buffet</li>
+              <li>Wi-Fi</li>
+              <li>Climatisation</li>
+              <li>Chambres Comfort</li>
+            </ul>
+            <a class="btn btn-primary" href="../index.html#contact">Demander cette offre</a>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>Services inclus dans l'offre</h2>
+          </div>
+
+          <div class="service-grid">
+            <article class="service-card">
+              <small>01</small>
+              <h3>Piscine avec hydromassage</h3>
+              <p>Acces a la piscine avec hydromassage, jets pour la nuque et geysers pour un vrai moment de detente.</p>
+            </article>
+
+            <article class="service-card">
+              <small>02</small>
+              <h3>Demi-pension</h3>
+              <p>Une formule pratique pour vivre le sejour avec plus de confort et un rythme plus leger.</p>
+            </article>
+
+            <article class="service-card">
+              <small>03</small>
+              <h3>Petit-dejeuner buffet</h3>
+              <p>Un buffet de petit-dejeuner avec preparations sucrees et salees faites maison.</p>
+            </article>
+
+            <article class="service-card">
+              <small>04</small>
+              <h3>Wi-Fi</h3>
+              <p>Connexion disponible pendant tout le sejour pour rester connecte en toute simplicite.</p>
+            </article>
+
+            <article class="service-card">
+              <small>05</small>
+              <h3>Climatisation</h3>
+              <p>Des espaces agreables et climatisees pour profiter pleinement de la semaine d'ete.</p>
+            </article>
+
+            <article class="service-card">
+              <small>06</small>
+              <h3>Chambres Comfort</h3>
+              <p>Une solution simple, lumineuse et confortable a quelques pas de la mer.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" style="padding-top: 0;">
+        <div class="container">
+          <article class="detail-panel">
+            <small>Detail de l'offre</small>
+            <h3>La demi-pension comprend</h3>
+            <p>
+              Un buffet de petit-dejeuner avec des plats sucres et sales faits maison, un choix de dejeuner
+              ou de diner avec un choix de menus (entree, plat principal et dessert), une nuitee en chambre
+              confortable et l'acces a la piscine avec hydromassage, jets de massage pour la nuque et geysers.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a class="footer-brand-link" href="https://www.h-pineta.com/fr/" target="_blank" rel="noopener noreferrer" aria-label="Site officiel Hotel Pineta en francais">
+            <img src="../../immagine/logo-hotel-pineta.png" alt="Logo Hotel Pineta bianco" />
+          </a>
+          <span class="footer-copy">Bellaria Igea Marina · hotel en bord de mer avec piscine, chambres elegantes et cuisine romagnole.</span>
+          <span class="footer-copy">Viale Pinzon 226 · 47814 Bellaria Igea Marina (RN)</span>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contacts</h4>
+          <a href="tel:+390541330401">Tel. +39 0541 330401</a>
+          <a href="mailto:info@h-pineta.com">info@h-pineta.com</a>
+          <a href="https://www.h-pineta.com/fr/" target="_blank" rel="noopener noreferrer">Site officiel</a>
+          <a href="https://www.h-pineta.com/fr/" target="_blank" rel="noopener noreferrer">Contacts</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Experience</h4>
+          <a href="https://www.h-pineta.com/fr/" target="_blank" rel="noopener noreferrer">Piscine</a>
+          <a href="https://www.h-pineta.com/fr/" target="_blank" rel="noopener noreferrer">Chambres et Suites</a>
+          <a href="https://www.h-pineta.com/fr/" target="_blank" rel="noopener noreferrer">Restaurant</a>
+          <a href="https://www.h-pineta.com/fr/" target="_blank" rel="noopener noreferrer">Services</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Donnees de l'etablissement</h4>
+          <p>P. IVA 00104470406</p>
+          <p>CIR 099001-AL-00035</p>
+          <p>CIN IT099001A1RDIBY5A4</p>
+        </div>
+      </div>
+
+      <div class="container footer-credits">
+        <div class="footer-bottom">© 2026 Hotel Pineta Bellaria Igea Marina</div>
+        <div class="footer-signature">
+          © 2026 Experience S.r.l. - Tous droits reserves | <a href="../../admin/">Zone admin</a> | tanggo.pro | tanggo.software produit par <a href="https://www.cv.joomlu.com/" target="_blank" rel="noopener noreferrer">cv.joomlu.com</a>
+        </div>
+      </div>
+    </footer>
+
+    <a
+      class="floating-whatsapp"
+      href="https://wa.me/393388945536?text=Bonjour%2C%20je%20souhaite%20recevoir%20des%20informations%20sur%20l%27offre%20Hotel%20Pineta."
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Ouvrir WhatsApp"
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M20.52 3.48A11.86 11.86 0 0 0 12.07 0C5.53 0 .2 5.33.2 11.87c0 2.1.55 4.15 1.6 5.96L0 24l6.37-1.67a11.83 11.83 0 0 0 5.7 1.46h.01c6.54 0 11.87-5.33 11.87-11.87 0-3.17-1.23-6.15-3.43-8.44Zm-8.45 18.3h-.01a9.8 9.8 0 0 1-4.99-1.37l-.36-.21-3.78.99 1.01-3.68-.23-.38a9.81 9.81 0 0 1-1.5-5.26c0-5.42 4.41-9.83 9.84-9.83 2.63 0 5.09 1.02 6.95 2.88a9.79 9.79 0 0 1 2.88 6.95c0 5.42-4.41 9.83-9.81 9.83Zm5.39-7.35c-.29-.14-1.74-.86-2.01-.95-.27-.1-.47-.14-.67.14-.19.29-.76.95-.92 1.15-.17.19-.34.22-.63.07-.29-.14-1.21-.45-2.31-1.44-.86-.77-1.44-1.72-1.61-2.01-.17-.29-.02-.45.13-.6.14-.14.29-.34.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.19 0-.5.07-.76.36-.26.29-.99.97-.99 2.38 0 1.41 1.01 2.77 1.15 2.96.14.19 2 3.05 4.84 4.27.68.29 1.21.46 1.63.59.68.22 1.29.19 1.78.12.54-.08 1.74-.71 1.98-1.39.24-.67.24-1.25.17-1.39-.07-.12-.26-.19-.55-.34Z"></path>
+      </svg>
+      <span>WhatsApp</span>
+    </a>
+  </body>
+</html>

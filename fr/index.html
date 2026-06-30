@@ -205,6 +205,50 @@
         text-align: center;
       }
 
+      .hero-offer-cocard {
+        display: inline-grid;
+        gap: 8px;
+        margin-top: 22px;
+        padding: 22px 24px;
+        border-radius: 30px;
+        background:
+          radial-gradient(circle at top right, rgba(255,255,255,0.34), transparent 30%),
+          linear-gradient(135deg, rgba(206, 126, 126, 0.99), rgba(155, 91, 91, 0.99));
+        color: #fff;
+        box-shadow: 0 20px 40px rgba(86, 42, 42, 0.24);
+        max-width: 420px;
+        justify-self: center;
+      }
+
+      .hero-offer-cocard small {
+        display: inline-flex;
+        align-items: center;
+        justify-self: center;
+        min-height: 28px;
+        padding: 0 12px;
+        border-radius: 999px;
+        background: rgba(255,255,255,0.18);
+        color: rgba(255,255,255,0.96);
+        font-family: Arial, sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        font-size: 0.68rem;
+        font-weight: 800;
+      }
+
+      .hero-offer-cocard strong {
+        font-size: 2rem;
+        line-height: 0.95;
+        font-weight: 600;
+      }
+
+      .hero-offer-cocard span {
+        font-family: Arial, sans-serif;
+        font-size: 0.98rem;
+        line-height: 1.35;
+        color: rgba(255,255,255,0.92);
+      }
+
       h1,
       h2,
       h3 {
@@ -624,6 +668,11 @@
           min-height: 520px;
         }
 
+        .hero-offer-cocard {
+          max-width: none;
+          width: 100%;
+        }
+
         .gallery-card {
           min-height: 280px;
         }
@@ -695,6 +744,11 @@
             <p>
               Piscine chauffee, cuisine romagnole et atmosphere detendue.
             </p>
+            <a class="hero-offer-cocard" href="offre/index.html">
+              <small>Nouvelle offre</small>
+              <strong>7 nuits</strong>
+              <span>du 19/07 au 26/07 · a partir de €515</span>
+            </a>
           </div>
 
           <div class="hero-visuals">
